@@ -62,8 +62,11 @@
 - **Preconditions/data:** Delivered invoice INV-00073.
 - **Steps:** Open the invoice and inspect the total text against the invoice background.
 - **Expected:** The total is clearly readable and visually distinguishable from the background.
-- **Actual:** The total is rendered in very light text on the white invoice panel and is difficult to read, although its value is present.
-- **Evidence:** [INV-00073 invoice screenshot](../evidence/screenshots/INV-00073-invoice-ui-calculation.png); case DESIGN-54.
+- **Actual:** The total is rendered in very light text on the white invoice panel and is difficult to read. Selecting the text makes the ₹2,950.00 total visible in the capture below.
+
+  ![Actual invoice INV-00073 with the ₹2,950.00 total selected](../evidence/screenshots/WC-011-invoice-total-selected.png)
+
+- **Evidence for DESIGN-54** · [Invoice with no text selected](../evidence/screenshots/INV-00073-invoice-ui-calculation.png) · [Invoice with total selected](../evidence/screenshots/WC-011-invoice-total-selected.png)
 
 ## WC-012 — Checkout accepts quantities above displayed stock
 
