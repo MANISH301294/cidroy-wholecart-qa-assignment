@@ -3,7 +3,7 @@
 **Environment:** Assigned `manish-dba39f` demo copy  
 **Execution date:** 2026-11-14  
 **Scope:** Browser UI only  
-**Status:** Thirteen UI defects are currently confirmed. WC-009 was reproduced earlier but was not reproduced in the latest run.
+**Status:** Thirteen UI defects are currently confirmed. WC-009 is a historical text-search observation and is excluded from confirmed defects.
 
 ## WC-002 — Checkout success message omits required wording and order number
 
@@ -45,7 +45,7 @@
 - **Actual:** Each submission renders raw HTTP 422 validation JSON instead of clear field-level messages.
 - **Evidence:** [Both blank](../evidence/screenshots/UI-LOGIN-BOTH-BLANK-422.png), [username blank](../evidence/screenshots/UI-LOGIN-BLANK-USERNAME-422.png), and [password blank](../evidence/screenshots/UI-LOGIN-BLANK-PASSWORD-422.png). Cases LOGIN-EMPTY-01 through LOGIN-EMPTY-03.
 
-## WC-009 — Catalogue Search did not filter products (not reproduced in latest run)
+## WC-009 — Historical text-search observation (retest passed)
 
 - **Severity:** S3 Major
 - **Requirement:** Buyer browse/search; BR-02

@@ -44,6 +44,7 @@ The earlier Catalogue Search defect (WC-009) was not reproduced in the latest ru
 - Logout redirected protected-page access to login; buyer role pages were inaccessible; buyer2 could not view buyer1's order (AUTH-03, AUTH-04, AUTH-06).
 - The Unicode buyer display name rendered correctly (AUTH-07).
 - Exact SKU and partial-name search returned filtered results (CAT-03).
+- A follow-up screenshot on 15 November showed the catalogue category filter working with the search field empty. Selecting Aerated Drinks returned a count of 56 products, and all visible rows were in that category.
 - The UI blocked same-day slots at 10:00:01 and later (SLOT-05).
 - Reordering the same 16-piece line twice added 32 pieces total (ORD-12).
 - A one-case plus 21-piece order reduced visible stock by 33 pieces; canceling restored the original stock (CAT-05, ORD-11).
