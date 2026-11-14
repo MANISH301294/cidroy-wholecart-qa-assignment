@@ -44,3 +44,10 @@ Result: PASS.
 LOG-05 scheduled hourly export
 UI result: export history listed runs at 2026-11-15 03:27:12 and 04:27:12 (+05:30), each reporting one row; the UI says exports run every hour. Scheduled output contents/schema were not exposed. Clicking Run export now did not create a visible new row during this observation.
 Result: PARTIAL.
+
+
+SEL-01 seller product management through CSV import
+Input: seller2 imported a one-row update for dedicated SKU-QA-20261115: piece price ₹13, case size 2, case price ₹26, stock 12.
+UI result: import reported 1 row and 0 errors. Buyer catalogue showed piece ₹13 and case 2 × ₹26.
+Cleanup: imported original test fixture values: piece price ₹12, case size 1, case price ₹12, stock 11. Buyer catalogue confirmed piece ₹12 and case 1 × ₹12. Existing CSV-02 readback separately verified seller product stock updates.
+Result: PASS.

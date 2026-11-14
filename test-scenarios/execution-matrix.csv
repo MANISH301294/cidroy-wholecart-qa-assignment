@@ -85,7 +85,7 @@ INV-07,UI,Invoices & Monthly Statements,BR-07/BR-08/BR-19/BR-20/BR-21/CR-09,NOT 
 INV-08,UI,Invoices & Monthly Statements,BR-07/BR-08/BR-19/BR-20/BR-21/CR-09,NOT RUN,,N/A,
 INV-09,UI,Invoices & Monthly Statements,BR-07/BR-08/BR-19/BR-20/BR-21/CR-09,PARTIAL,,N/A,
 INV-10,UI,Invoices & Monthly Statements,BR-07/BR-08/BR-19/BR-20/BR-21/CR-09,FAIL,WC-021,S1 Blocker,../defect-reports/triage/INV-10.md
-SEL-01,UI,Seller Products & CSV Import (UI),BR-21,NOT RUN,,N/A,
+SEL-01,UI,Seller Products & CSV Import (UI),BR-21,PASS,,N/A,
 SEL-02,UI,Seller Products & CSV Import (UI),BR-21,NOT RUN,,N/A,
 CSV-01,API,Seller Products & CSV Import,IF-01,PASS,,N/A,
 CSV-02,API,Seller Products & CSV Import,IF-01,PASS,,N/A,
