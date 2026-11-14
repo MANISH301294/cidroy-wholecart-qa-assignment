@@ -25,7 +25,7 @@ The UI case sheet contains **115 cases: 26 PASS, 19 FAIL, 18 PARTIAL, 3 SKIPPED,
 | BR-01 — Piece-based stock and no overselling | FAIL | CART-09; [overstock order](../evidence/screenshots/CART-09-overstock-order-placed.png) | Checkout accepted 201 pieces while the product page showed 161 in stock; the test order was canceled |
 | BR-02 — Zero-stock products hidden | FAIL | CAT-02; [SKU-0073 search result](../evidence/screenshots/CAT-02-search-includes-SKU-0073.png) | SKU-0064 and SKU-0073 each showed zero stock on their product pages but remained in buyer search |
 | BR-03 — Quantity per line 1–99 | PARTIAL | CART-03, CART-05, CART-06; [quantity 99](../evidence/screenshots/CART-03-quantity-99-valid.png) | 1 and 99 were accepted, 100 rejected, and 21 was added from the product page; the cart control is still a textbox rather than the specified 1–20 dropdown |
-| BR-04 — ₹1,500 minimum | SUPERSEDED; CR-07 minimum FAIL | CHK-01, CHK-02; [checkout totals](../evidence/screenshots/CHK-02-two-seller-total-above-min-one-below.png); [release notes](../evidence/screenshots/OPS-14-release-notes-no-approved-extension.png) | CR-07 approves ₹2,000 net per seller. Checkout placed FreshFarm at ₹993.60 net while the combined seller net was ₹3,643.20; the sub-order was canceled. Exact threshold behavior remains untested. |
+| BR-04 — ₹1,500 minimum | SUPERSEDED; CR-07 minimum FAIL | CHK-01, CHK-02; [checkout totals](../evidence/screenshots/CHK-02-two-seller-total-above-min-one-below.png); [release notes](../evidence/screenshots/OPS-14-release-notes-no-approved-extension.png) | CR-07 approves ₹2,000 net per seller. Checkout placed FreshFarm at ₹993.60 net while the combined seller net was ₹3,643.20; the sub-order was canceled. Exact thresholds were untested in the UI. The separate single-seller API run covered ₹1,999.99, ₹2,000.00 and ₹2,000.01. |
 | BR-05 — Four slots, today through +7, capacity 5 | PARTIAL | SLOT-01, SLOT-02; [checkout date screenshot](../evidence/screenshots/UI-CHECKOUT-DATE-PLUS-7-SLOTS.png); settings snapshot | Today +7 was enabled, +8 disabled, and all four slot labels appeared; today/past boundaries and capacity-full behavior were not tested |
 | BR-06 — Same-day afternoon slots before cutoff | FAIL | SLOT-03 through SLOT-05; [at-cutoff order](../evidence/screenshots/SLOT-04-order-accepted-at-cutoff.png) | Before-cutoff slots were available and after-cutoff slots were disabled; at exactly 10:00 an afternoon order was accepted |
 | BR-07 — Tax aggregated by rate, rounded half-up once | PARTIAL | CHK-05/CHK-06, INV-03; [invoice calculations](../evidence/screenshots/) | Single-line 5% and 18% arithmetic was observed; multi-line rate aggregation was unavailable |
@@ -59,9 +59,10 @@ The UI case sheet contains **115 cases: 26 PASS, 19 FAIL, 18 PARTIAL, 3 SKIPPED,
 
 | Requirement | UI status | UI cases / evidence | UI coverage gap |
 |---|---|---|---|
-| NF-01 — 30 simultaneous checkouts, 95% within 3 seconds | OUT OF SCOPE | CHK-12 excluded | Requires controlled load testing, not UI-only execution |
-| NF-02 — Search p95 within 2 seconds | OUT OF SCOPE | NF-02 metrics/API case excluded | Requires performance measurement; UI search itself fails to filter (CAT-03) |
-| NF-03 — Responsive layout | PARTIAL | NF-03; [buyer statement at 320px](../evidence/screenshots/NF-03-buyer-statement-320px.png) | The buyer statement had no horizontal overflow at 320px; seller and operator layouts and other breakpoints remain untested. |
+| NF-01 — 30 simultaneous checkouts, 95% within 3 seconds | NOT RUN | [Load plan](../docs/load-test.md) | Requires 30 independent prepared buyer carts |
+| NF-02 — Search p95 within 2 seconds | NOT RUN | CAT-08 | Exact-SKU and partial-name filtering passed in CAT-03. Search latency remains unmeasured. |
+| NF-03 — 50 RPS ceiling, over-limit 429 and metrics | PARTIAL | [API smoke results](../docs/results-report.md) and [load plan](../docs/load-test.md) | The metrics endpoint is covered by the API smoke suite. Over-limit traffic was not generated. |
+| Responsive layout (UI checklist) | PARTIAL | NF-03; [buyer statement at 320px](../evidence/screenshots/NF-03-buyer-statement-320px.png) | The buyer statement had no horizontal overflow at 320px; seller and operator layouts and other breakpoints remain untested. |
 
 ## Screen requirements
 
