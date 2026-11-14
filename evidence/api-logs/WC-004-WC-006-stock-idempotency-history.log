@@ -1,0 +1,48 @@
+
+> cidorytest@1.0.0 test:api
+> playwright test tests/api --grep concurrent checkouts never oversell --workers=1
+
+
+Running 1 test using 1 worker
+
+{"scenario":"80/20/30","requested":[80,20,30],"responses":[{"status":200,"body":"{\"checkout_ref\":\"C1-1794652136-928\",\"orders\":[\"WC-01057-1\"],\"order_ids\":[58]}","orderIds":[58]},{"status":200,"body":"{\"checkout_ref\":\"C2-1794652136-5472\",\"orders\":[\"WC-01059-1\"],\"order_ids\":[60]}","orderIds":[60]},{"status":200,"body":"{\"checkout_ref\":\"C3-1794652136-320\",\"orders\":[\"WC-01058-1\"],\"order_ids\":[59]}","orderIds":[59]}],"historyStatuses":[500,200,200],"orders":[{"number":"WC-01057-1","status":"placed","pieces":80},{"number":"WC-01059-1","status":"placed","pieces":20},{"number":"WC-01058-1","status":"placed","pieces":30}],"piecesReserved":130,"remainingStock":-30}
+{"scenario":"100/20/30","requested":[100,20,30],"responses":[{"status":200,"body":"{\"checkout_ref\":\"C1-1794652137-9072\",\"orders\":[\"WC-01060-1\"],\"order_ids\":[61]}","orderIds":[61]},{"status":200,"body":"{\"checkout_ref\":\"C2-1794652137-5968\",\"orders\":[\"WC-01062-1\"],\"order_ids\":[63]}","orderIds":[63]},{"status":200,"body":"{\"checkout_ref\":\"C3-1794652137-4240\",\"orders\":[\"WC-01061-1\"],\"order_ids\":[62]}","orderIds":[62]}],"historyStatuses":[200,500,200],"orders":[{"number":"WC-01060-1","status":"placed","pieces":100},{"number":"WC-01062-1","status":"placed","pieces":20},{"number":"WC-01061-1","status":"placed","pieces":30}],"piecesReserved":150,"remainingStock":-50}
+{"scenario":"same checkout twice","responses":[{"status":200,"body":"{\"checkout_ref\":\"C1-1794652139-7792\",\"orders\":[\"WC-01063-1\"],\"order_ids\":[64]}","orderIds":[64]},{"status":200,"body":"{\"checkout_ref\":\"C1-1794652139-8448\",\"orders\":[\"WC-01064-1\"],\"order_ids\":[65]}","orderIds":[65]}],"orderNumbers":["WC-01063-1","WC-01064-1"]}
+{"scenario":"buyer1 buys 100, cancels, then buyer2 buys","buyer1":[{"number":"WC-01065-1","status":"placed","pieces":100}],"stockAfterBuyer1Cancellation":100}
+{"scenario":"buyer2 purchase after buyer1 cancellation","buyer2":[{"number":"WC-01066-1","status":"placed","pieces":100}],"stockAfterBuyer2Cancellation":100}
+  ✘  1 [chromium] › tests/api/concurrency-stock.spec.ts:57:3 › Stock concurrency, idempotency, and cancellation › concurrent checkouts never oversell and cancellation returns stock (7.7s)
+
+
+  1) [chromium] › tests/api/concurrency-stock.spec.ts:57:3 › Stock concurrency, idempotency, and cancellation › concurrent checkouts never oversell and cancellation returns stock 
+
+    Error: Functional stock/idempotency violations
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 9
+
+    - Array []
+    + Array [
+    +   "80/20/30 reserved 130 pieces with stock limited to 100",
+    +   "80/20/30 left inventory at -30",
+    +   "80/20/30 caused order history to return HTTP 5xx: 500,200,200",
+    +   "100/20/30 reserved 150 pieces with stock limited to 100",
+    +   "100/20/30 left inventory at -50",
+    +   "100/20/30 caused order history to return HTTP 5xx: 200,500,200",
+    +   "Double submit created 2 orders instead of exactly one",
+    + ]
+
+      410 |     }
+      411 |
+    > 412 |     expect(violations, 'Functional stock/idempotency violations').toEqual([]);
+          |                                                                   ^
+      413 |   });
+      414 | });
+      415 |
+        at /Users/manish/Documents/cidoryTest/tests/api/concurrency-stock.spec.ts:412:67
+
+    Error Context: test-results/api-concurrency-stock-Stoc-8e28a--cancellation-returns-stock-chromium/error-context.md
+
+  1 failed
+    [chromium] › tests/api/concurrency-stock.spec.ts:57:3 › Stock concurrency, idempotency, and cancellation › concurrent checkouts never oversell and cancellation returns stock 

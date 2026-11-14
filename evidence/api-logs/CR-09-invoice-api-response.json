@@ -1,0 +1,62 @@
+{
+  "id": 5,
+  "number": "INV-00005",
+  "created_at": "2026-11-07T05:27:12+05:30",
+  "order_number": "WC-01005-1",
+  "buyer": {
+    "display_name": "Café Dosa Corner",
+    "gstin": "30[redacted]",
+    "address": "[redacted]"
+  },
+  "seller": {
+    "name": "FreshFarm Foods",
+    "gstin": "27[redacted]"
+  },
+  "lines": [
+    {
+      "id": 13,
+      "order_id": 5,
+      "product_id": 5,
+      "name": "Prime Basmati Rice",
+      "unit": "case",
+      "qty": 2,
+      "pieces": 48,
+      "unit_price": "1965.12",
+      "tax_rate": 5,
+      "line_net": "3930.24",
+      "tax": "196.51",
+      "line_total": "4126.75"
+    },
+    {
+      "id": 14,
+      "order_id": 5,
+      "product_id": 31,
+      "name": "Farm Toor Dal",
+      "unit": "case",
+      "qty": 3,
+      "pieces": 36,
+      "unit_price": "4029.60",
+      "tax_rate": 5,
+      "line_net": "12088.80",
+      "tax": "604.44",
+      "line_total": "12693.24"
+    },
+    {
+      "id": 15,
+      "order_id": 5,
+      "product_id": 63,
+      "name": "Hill Wheat Atta",
+      "unit": "case",
+      "qty": 1,
+      "pieces": 6,
+      "unit_price": "99.36",
+      "tax_rate": 5,
+      "line_net": "99.36",
+      "tax": "4.97",
+      "line_total": "104.33"
+    }
+  ],
+  "subtotal": "16118.40",
+  "tax": "805.92",
+  "total": "16924.32"
+}

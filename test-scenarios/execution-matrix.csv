@@ -1,0 +1,121 @@
+Case ID,Surface,Area,Requirement,Status,Defect,Severity,Triage file
+AUTH-01,UI,Authentication & Role Access,BR-21,PARTIAL,,N/A,
+AUTH-02,UI,Authentication & Role Access,BR-21,PASS,,N/A,
+AUTH-03,UI,Authentication & Role Access,BR-21,PASS,,N/A,
+AUTH-04,UI,Authentication & Role Access,BR-21,PASS,,N/A,
+AUTH-05,UI,Authentication & Role Access,BR-21,NOT RUN,,N/A,
+AUTH-06,UI,Authentication & Role Access,BR-21,PARTIAL,,N/A,
+AUTH-07,UI,Authentication & Role Access,BR-21,PASS,,N/A,
+CAT-01,UI,Catalogue & Product Search,BR-02/BR-22,FAIL,WC-014,S3 Major,../defect-reports/triage/CAT-01.md
+CAT-02,UI,Catalogue & Product Search,BR-02/BR-22,FAIL,WC-014,S3 Major,../defect-reports/triage/CAT-02.md
+CAT-03,UI,Catalogue & Product Search,BR-02/BR-22,PASS,,N/A,
+CAT-04,UI,Catalogue & Product Search,BR-02/BR-22,PARTIAL,,N/A,
+CAT-05,UI,Catalogue & Product Search,BR-02/BR-22,PASS,,N/A,
+CAT-06,UI,Catalogue & Product Search,BR-02/BR-22,NOT RUN,,N/A,
+CAT-07,UI,Catalogue & Product Search,BR-02/BR-22,PASS,,N/A,
+CAT-08,UI,Catalogue & Product Search,BR-02/BR-22,PARTIAL,,N/A,
+CART-01,UI,Cart & Quantity,BR-01/BR-03/Screen 5.1,PASS,,N/A,
+CART-02,UI,Cart & Quantity,BR-01/BR-03/Screen 5.1,PASS,,N/A,
+CART-03,UI,Cart & Quantity,BR-01/BR-03/Screen 5.1,PASS,,N/A,
+CART-04,UI,Cart & Quantity,BR-01/BR-03/Screen 5.1,PARTIAL,,N/A,
+CART-05,UI,Cart & Quantity,BR-01/BR-03/Screen 5.1,FAIL,WC-010,S4 Minor,../defect-reports/triage/CART-05.md
+CART-06,UI,Cart & Quantity,BR-01/BR-03/Screen 5.1,PASS,,N/A,
+CART-07,UI,Cart & Quantity,BR-01/BR-03/Screen 5.1,PARTIAL,,N/A,
+CART-08,UI,Cart & Quantity,BR-01/BR-03/Screen 5.1,PASS,,N/A,
+CART-09,UI,Cart & Quantity,BR-01/BR-03/Screen 5.1,FAIL,WC-012,S1 Blocker,../defect-reports/triage/CART-09.md
+CART-10,UI,Cart & Quantity,BR-01/BR-03/Screen 5.1,NOT RUN,,N/A,
+CHK-01,UI,"Checkout, Tax & Delivery Fees",CR-07/BR-07/BR-08/BR-09/BR-10/Screen 5.2,SUPERSEDED,,N/A,
+CHK-02,UI,"Checkout, Tax & Delivery Fees",CR-07/BR-07/BR-08/BR-09/BR-10/Screen 5.2,FAIL,WC-017,S2 Critical,../defect-reports/triage/CHK-02.md
+CHK-03,UI,"Checkout, Tax & Delivery Fees",CR-07/BR-07/BR-08/BR-09/BR-10/Screen 5.2,FAIL,WC-018,S2 Critical,../defect-reports/triage/CHK-03.md
+CHK-04,UI,"Checkout, Tax & Delivery Fees",CR-07/BR-07/BR-08/BR-09/BR-10/Screen 5.2,NOT RUN,,N/A,
+CHK-05,UI,"Checkout, Tax & Delivery Fees",CR-07/BR-07/BR-08/BR-09/BR-10/Screen 5.2,SKIPPED,,N/A,
+CHK-06,UI,"Checkout, Tax & Delivery Fees",CR-07/BR-07/BR-08/BR-09/BR-10/Screen 5.2,PARTIAL,,N/A,
+CHK-07,UI,"Checkout, Tax & Delivery Fees",CR-07/BR-07/BR-08/BR-09/BR-10/Screen 5.2,PARTIAL,,N/A,
+CHK-08,UI,"Checkout, Tax & Delivery Fees",CR-07/BR-07/BR-08/BR-09/BR-10/Screen 5.2,PASS,,N/A,
+CHK-09,UI,"Checkout, Tax & Delivery Fees",CR-07/BR-07/BR-08/BR-09/BR-10/Screen 5.2,PARTIAL,,N/A,
+CHK-10,UI,"Checkout, Tax & Delivery Fees",CR-07/BR-07/BR-08/BR-09/BR-10/Screen 5.2,FAIL,WC-002,S4 Minor,../defect-reports/triage/CHK-10.md
+CHK-11,UI,"Checkout, Tax & Delivery Fees",CR-07/BR-07/BR-08/BR-09/BR-10/Screen 5.2,NOT RUN,,N/A,
+SLOT-01,UI,Delivery Slots & Operator Clock,BR-05/BR-06/BR-14/BR-15/BR-23/BR-24,PARTIAL,,N/A,
+SLOT-02,UI,Delivery Slots & Operator Clock,BR-05/BR-06/BR-14/BR-15/BR-23/BR-24,PASS,,N/A,
+SLOT-03,UI,Delivery Slots & Operator Clock,BR-05/BR-06/BR-14/BR-15/BR-23/BR-24,PASS,,N/A,
+SLOT-04,UI,Delivery Slots & Operator Clock,BR-05/BR-06/BR-14/BR-15/BR-23/BR-24,FAIL,WC-013,S3 Major,../defect-reports/triage/SLOT-04.md
+SLOT-05,UI,Delivery Slots & Operator Clock,BR-05/BR-06/BR-14/BR-15/BR-23/BR-24,PASS,,N/A,
+SLOT-06,UI,Delivery Slots & Operator Clock,BR-05/BR-06/BR-14/BR-15/BR-23/BR-24,NOT RUN,,N/A,
+SLOT-07,UI,Delivery Slots & Operator Clock,BR-05/BR-06/BR-14/BR-15/BR-23/BR-24,PARTIAL,,N/A,
+SLOT-08,UI,Delivery Slots & Operator Clock,BR-05/BR-06/BR-14/BR-15/BR-23/BR-24,NOT RUN,,N/A,
+SLOT-09,UI,Delivery Slots & Operator Clock,BR-05/BR-06/BR-14/BR-15/BR-23/BR-24,PASS,,N/A,
+SLOT-10,UI,Delivery Slots & Operator Clock,BR-05/BR-06/BR-14/BR-15/BR-23/BR-24,NOT RUN,,N/A,
+SLOT-11,UI,Delivery Slots & Operator Clock,BR-05/BR-06/BR-14/BR-15/BR-23/BR-24,NOT RUN,,N/A,
+ORD-01,UI,"Orders, Cancellation & Reorder",BR-09–BR-16/BR-21,PASS,,N/A,
+ORD-02,UI,"Orders, Cancellation & Reorder",BR-09–BR-16/BR-21,NOT RUN,,N/A,
+ORD-03,UI,"Orders, Cancellation & Reorder",BR-09–BR-16/BR-21,NOT RUN,,N/A,
+ORD-04,UI,"Orders, Cancellation & Reorder",BR-09–BR-16/BR-21,FAIL,WC-003,S4 Minor,../defect-reports/triage/ORD-04.md
+ORD-05,UI,"Orders, Cancellation & Reorder",BR-09–BR-16/BR-21,NOT RUN,,N/A,
+ORD-06,UI,"Orders, Cancellation & Reorder",BR-09–BR-16/BR-21,NOT RUN,,N/A,
+ORD-07,UI,"Orders, Cancellation & Reorder",BR-09–BR-16/BR-21,NOT RUN,,N/A,
+ORD-08,UI,"Orders, Cancellation & Reorder",BR-09–BR-16/BR-21,NOT RUN,,N/A,
+ORD-09,UI,"Orders, Cancellation & Reorder",BR-09–BR-16/BR-21,NOT RUN,,N/A,
+ORD-10,UI,"Orders, Cancellation & Reorder",BR-09–BR-16/BR-21,PARTIAL,,N/A,
+ORD-11,UI,"Orders, Cancellation & Reorder",BR-09–BR-16/BR-21,PASS,,N/A,
+ORD-12,UI,"Orders, Cancellation & Reorder",BR-09–BR-16/BR-21,PASS,,N/A,
+ORD-13,UI,"Orders, Cancellation & Reorder",BR-09–BR-16/BR-21,NOT RUN,,N/A,
+RED-01,UI,Failed Delivery & Redelivery,BR-13/BR-14,NOT RUN,,N/A,
+RED-02,UI,Failed Delivery & Redelivery,BR-13/BR-14,NOT RUN,,N/A,
+RED-03,UI,Failed Delivery & Redelivery,BR-13/BR-14,NOT RUN,,N/A,
+RED-04,UI,Failed Delivery & Redelivery,BR-13/BR-14,NOT RUN,,N/A,
+RED-05,UI,Failed Delivery & Redelivery,BR-13/BR-14,NOT RUN,,N/A,
+RED-06,UI,Failed Delivery & Redelivery,BR-13/BR-14,NOT RUN,,N/A,
+REF-01,UI,Refunds & Exchanges,BR-17/BR-18,NOT RUN,,N/A,
+REF-02,UI,Refunds & Exchanges,BR-17/BR-18,NOT RUN,,N/A,
+REF-03,UI,Refunds & Exchanges,BR-17/BR-18,PASS,,N/A,
+REF-04,UI,Refunds & Exchanges,BR-17/BR-18,NOT RUN,,N/A,
+REF-05,UI,Refunds & Exchanges,BR-17/BR-18,NOT RUN,,N/A,
+REF-06,UI,Refunds & Exchanges,BR-17/BR-18,NOT RUN,,N/A,
+REF-07,UI,Refunds & Exchanges,BR-17/BR-18,NOT RUN,,N/A,
+REF-08,UI,Refunds & Exchanges,BR-17/BR-18,NOT RUN,,N/A,
+REF-09,UI,Refunds & Exchanges,BR-17/BR-18,NOT RUN,,N/A,
+REF-10,UI,Refunds & Exchanges,BR-17/BR-18,NOT RUN,,N/A,
+INV-01,UI,Invoices & Monthly Statements,BR-07/BR-08/BR-19/BR-20/BR-21/CR-09,PARTIAL,,N/A,
+INV-02,UI,Invoices & Monthly Statements,BR-07/BR-08/BR-19/BR-20/BR-21/CR-09,FAIL,WC-007,S1 Blocker,../defect-reports/triage/INV-02.md
+INV-03,UI,Invoices & Monthly Statements,BR-07/BR-08/BR-19/BR-20/BR-21/CR-09,PARTIAL,,N/A,
+INV-04,UI,Invoices & Monthly Statements,BR-07/BR-08/BR-19/BR-20/BR-21/CR-09,FAIL,WC-007,S1 Blocker,../defect-reports/triage/INV-04.md
+INV-05,UI,Invoices & Monthly Statements,BR-07/BR-08/BR-19/BR-20/BR-21/CR-09,PASS,,N/A,
+INV-06,UI,Invoices & Monthly Statements,BR-07/BR-08/BR-19/BR-20/BR-21/CR-09,FAIL,WC-015,S3 Major,../defect-reports/triage/INV-06.md
+INV-07,UI,Invoices & Monthly Statements,BR-07/BR-08/BR-19/BR-20/BR-21/CR-09,NOT RUN,,N/A,
+INV-08,UI,Invoices & Monthly Statements,BR-07/BR-08/BR-19/BR-20/BR-21/CR-09,NOT RUN,,N/A,
+INV-09,UI,Invoices & Monthly Statements,BR-07/BR-08/BR-19/BR-20/BR-21/CR-09,PARTIAL,,N/A,
+INV-10,UI,Invoices & Monthly Statements,BR-07/BR-08/BR-19/BR-20/BR-21/CR-09,NOT RUN,,N/A,
+SEL-01,UI,Seller Products & CSV Import (UI),BR-21,NOT RUN,,N/A,
+SEL-02,UI,Seller Products & CSV Import (UI),BR-21,NOT RUN,,N/A,
+CSV-01,UI,Seller Products & CSV Import (UI),IF-01,NOT RUN,,N/A,
+CSV-02,UI,Seller Products & CSV Import (UI),IF-01,NOT RUN,,N/A,
+CSV-03,UI,Seller Products & CSV Import (UI),IF-01,NOT RUN,,N/A,
+CSV-04,UI,Seller Products & CSV Import (UI),IF-01,NOT RUN,,N/A,
+CSV-05,UI,Seller Products & CSV Import (UI),IF-01,NOT RUN,,N/A,
+CSV-06,UI,Seller Products & CSV Import (UI),IF-01,NOT RUN,,N/A,
+CSV-07,UI,Seller Products & CSV Import (UI),IF-01,NOT RUN,,N/A,
+OPS-01,UI,"Operator, Logistics & Non-functional",BR-23/Operator UI,NOT RUN,,N/A,
+OPS-02,UI,"Operator, Logistics & Non-functional",BR-23/Operator UI,NOT RUN,,N/A,
+LOG-01,UI,"Operator, Logistics & Non-functional",IF-02/Operator UI,PASS,,N/A,
+LOG-02,UI,"Operator, Logistics & Non-functional",IF-02/Operator UI,SKIPPED,,N/A,
+LOG-03,UI,"Operator, Logistics & Non-functional",IF-02/Operator UI,SKIPPED,,N/A,
+LOG-04,UI,"Operator, Logistics & Non-functional",IF-02/Operator UI,NOT RUN,,N/A,
+LOG-05,UI,"Operator, Logistics & Non-functional",IF-02/Operator UI,NOT RUN,,N/A,
+NF-03,UI,"Operator, Logistics & Non-functional",UI validation/responsive behavior,PARTIAL,,N/A,
+NF-04,UI,"Operator, Logistics & Non-functional",UI validation/responsive behavior,PARTIAL,WC-008,S4 Minor,
+INQ-01,UI,"Operator, Logistics & Non-functional",Buyer inquiry UI/CR-11,FAIL,WC-016,S3 Major,../defect-reports/triage/INQ-01.md
+INQ-02,UI,"Operator, Logistics & Non-functional",Buyer inquiry UI/CR-11,PARTIAL,,N/A,
+LOGIN-EMPTY-01,UI,Authentication & Role Access,Login UI validation,FAIL,WC-008,S4 Minor,../defect-reports/triage/LOGIN-EMPTY-01.md
+LOGIN-EMPTY-02,UI,Authentication & Role Access,Login UI validation,FAIL,WC-008,S4 Minor,../defect-reports/triage/LOGIN-EMPTY-02.md
+LOGIN-EMPTY-03,UI,Authentication & Role Access,Login UI validation,FAIL,WC-008,S4 Minor,../defect-reports/triage/LOGIN-EMPTY-03.md
+INV-CR09-STATE,UI,Invoices & Monthly Statements,CR-09/BR-19,FAIL,WC-007,S1 Blocker,../defect-reports/triage/INV-CR09-STATE.md
+DESIGN-51,UI,Design Conformance,Screen 5.1 Cart,FAIL,WC-010,S4 Minor,../defect-reports/triage/DESIGN-51.md
+DESIGN-52,UI,Design Conformance,Screen 5.2 Checkout,PASS,,N/A,
+DESIGN-53,UI,Design Conformance,Screen 5.3 Order history,PASS,,N/A,
+DESIGN-54,UI,Design Conformance,Screen 5.4 Invoice/BR-19/CR-09,FAIL,WC-007; WC-011,S1 Blocker / S3 Major,../defect-reports/triage/DESIGN-54.md
+DESIGN-55,UI,Design Conformance,Screen 5.5 Seller order list,PASS,,N/A,
+API-STOCK-RACE,API,Focused check,BR-01,FAIL,WC-004,S1 Blocker,../defect-reports/triage/API-STOCK-RACE.md
+API-DUPLICATE,API,Focused check,BR-10,FAIL,WC-005,S1 Blocker,../defect-reports/triage/API-DUPLICATE.md
+API-HISTORY,API,Focused check,BR-21,FAIL,WC-006,S3 Major,../defect-reports/triage/API-HISTORY.md
+API-INVOICE,API,Focused check,CR-09,FAIL,WC-007,S1 Blocker,../defect-reports/triage/API-INVOICE.md
+UI-FAVICON,UI,Focused check,UI quality,FAIL,WC-001,S4 Minor,../defect-reports/triage/UI-FAVICON.md

@@ -1,0 +1,31 @@
+WholeCart refund checks
+Environment: assigned manish-dba39f demo copy
+Fixture: buyer2 delivered order WC-01005-1 (ID 5); line ID 13 ordered quantity 2
+Initial buyer refund requests: []
+Initial seller2 refund queue: []
+
+POST /api/orders/5/refunds
+Payload: {"type":"refund","items":[{"line_id":13,"qty":-1}]}
+HTTP 400
+{"error":"Type must be full, partial or exchange"}
+Requests after probe: []
+
+POST /api/orders/5/refunds with type=partial and line_id=13
+qty=-1 -> HTTP 400 {"error":"Each line needs a quantity between 1 and the quantity ordered"}
+qty=0 -> HTTP 400 {"error":"Each line needs a quantity between 1 and the quantity ordered"}
+qty=3 (ordered quantity is 2) -> HTTP 400 {"error":"Each line needs a quantity between 1 and the quantity ordered"}
+qty=1.5 -> HTTP 400 {"error":"Each line needs a quantity between 1 and the quantity ordered"}
+qty="-1" -> HTTP 400 {"error":"Each line needs a quantity between 1 and the quantity ordered"}
+No refund records were created by these invalid requests.
+
+Valid partial-refund calculation check:
+POST /api/orders/5/refunds
+Payload: {"type":"partial","items":[{"line_id":13,"qty":1}]}
+HTTP 200
+{"id":1,"order_id":5,"type":"partial","status":"requested","amount":"2063.38","created_at":"2026-11-14T15:44:23+05:30","decided_at":null}
+Amount check: one of two line units; net ₹1,965.12 plus 5% tax ₹98.26 = ₹2,063.38.
+
+Seller decision to preserve seeded delivered order:
+POST /api/seller/refunds/1/reject -> HTTP 200
+{"id":1,"order_id":5,"type":"partial","status":"rejected","amount":"2063.38","created_at":"2026-11-14T15:44:23+05:30","decided_at":"2026-11-14T15:44:23+05:30"}
+Final buyer request status: rejected. No refund was approved or paid.
