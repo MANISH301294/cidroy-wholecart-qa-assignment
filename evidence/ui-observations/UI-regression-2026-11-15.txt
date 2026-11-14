@@ -64,3 +64,10 @@ Input: existing unshipped placed order WC-01077-1, originally scheduled 2026-11-
 UI result: changed slot to 17:00–20:00; the order detail showed the updated delivery slot.
 Cleanup: changed it back to the original 14:00–17:00 and verified the order detail. No order was placed or canceled.
 Result: PASS.
+
+
+ORD-13 reorder with insufficient stock
+Input: delivered order WC-01081-1 contained 25 cases of Chef's Cardamom (case size 24). Product page showed stock −545 pieces.
+UI result: Reorder added 25 cases to cart. Checkout showed no stock warning and kept Place order enabled. No order was submitted; this is linked to existing stock defect WC-012 (CART-09), not logged as a duplicate.
+Cleanup: cart quantity set to 0; cart verified empty.
+Result: FAIL; see [WC-012 triage](../../defect-reports/triage/CART-09.md).

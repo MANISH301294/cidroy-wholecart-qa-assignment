@@ -28,3 +28,10 @@ Checkout allowed 40 pieces above the displayed stock.
 - [CART-09-overstock-order-placed.png](../../evidence/screenshots/CART-09-overstock-order-placed.png)
 
 [Defect details](../defect-log.md)
+
+
+## Reorder follow-up · 15 November 2026
+
+Delivered order WC-01081-1 contained 25 cases of Chef's Cardamom. The buyer product page showed stock at −545 pieces. Reorder placed 25 cases into the cart; checkout showed no stock warning and kept Place order enabled. No second order was submitted. The cart was cleared. This is additional UI evidence for WC-012; it does not create a duplicate defect.
+
+[Execution note](../../evidence/ui-observations/UI-regression-2026-11-15.txt)

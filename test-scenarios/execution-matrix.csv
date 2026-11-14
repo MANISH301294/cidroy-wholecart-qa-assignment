@@ -58,7 +58,7 @@ ORD-09,UI,"Orders, Cancellation & Reorder",BR-09–BR-16/BR-21,NOT RUN,,N/A,
 ORD-10,UI,"Orders, Cancellation & Reorder",BR-09–BR-16/BR-21,PARTIAL,,N/A,
 ORD-11,UI,"Orders, Cancellation & Reorder",BR-09–BR-16/BR-21,PASS,,N/A,
 ORD-12,UI,"Orders, Cancellation & Reorder",BR-09–BR-16/BR-21,PASS,,N/A,
-ORD-13,UI,"Orders, Cancellation & Reorder",BR-09–BR-16/BR-21,NOT RUN,,N/A,
+ORD-13,UI,"Orders, Cancellation & Reorder",BR-09–BR-16/BR-21,FAIL,WC-012,S1 Blocker,../defect-reports/triage/CART-09.md
 RED-01,UI,Failed Delivery & Redelivery,BR-13/BR-14,NOT RUN,,N/A,
 RED-02,UI,Failed Delivery & Redelivery,BR-13/BR-14,NOT RUN,,N/A,
 RED-03,UI,Failed Delivery & Redelivery,BR-13/BR-14,NOT RUN,,N/A,

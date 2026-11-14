@@ -16,13 +16,13 @@
 - **SUPERSEDED:** An approved release note replaces the original rule.
 - **OUT OF SCOPE:** The requirement requires API/load testing rather than UI testing.
 
-The UI case sheet contains **115 cases: 38 PASS, 22 FAIL, 21 PARTIAL, 5 SKIPPED, 28 NOT RUN, and 1 SUPERSEDED**. Eighty-one cases have execution evidence (PASS, FAIL, or PARTIAL). Five cases compare the actual UI with the five `docs/design` wireframes. API-only, metrics, rate-limit, and load-test cases are excluded. Do not infer backend behavior from UI controls or screenshots.
+The UI case sheet contains **115 cases: 38 PASS, 23 FAIL, 21 PARTIAL, 5 SKIPPED, 27 NOT RUN, and 1 SUPERSEDED**. Eighty-two cases have execution evidence (PASS, FAIL, or PARTIAL). Five cases compare the actual UI with the five `docs/design` wireframes. API-only, metrics, rate-limit, and load-test cases are excluded. Do not infer backend behavior from UI controls or screenshots.
 
 ## Business rules
 
 | Requirement | UI status | UI cases / evidence | UI coverage gap |
 |---|---|---|---|
-| BR-01 — Piece-based stock and no overselling | FAIL | CART-09; [overstock order](../evidence/screenshots/CART-09-overstock-order-placed.png) | Checkout accepted 201 pieces while the product page showed 161 in stock; the test order was canceled |
+| BR-01 — Piece-based stock and no overselling | FAIL | CART-09/ORD-13; [overstock order](../evidence/screenshots/CART-09-overstock-order-placed.png) | Checkout accepted 201 pieces while the product page showed 161 in stock; the test order was canceled |
 | BR-02 — Zero-stock products hidden | FAIL | CAT-02; [SKU-0073 search result](../evidence/screenshots/CAT-02-search-includes-SKU-0073.png) | SKU-0064 and SKU-0073 each showed zero stock on their product pages but remained in buyer search |
 | BR-03 — Quantity per line 1–99 | PARTIAL | CART-03, CART-05, CART-06; [quantity 99](../evidence/screenshots/CART-03-quantity-99-valid.png) | 1 and 99 were accepted, 100 rejected, and 21 was added from the product page; the cart control is still a textbox rather than the specified 1–20 dropdown |
 | BR-04 — ₹1,500 minimum | SUPERSEDED; CR-07 minimum FAIL | CHK-01, CHK-02; [checkout totals](../evidence/screenshots/CHK-02-two-seller-total-above-min-one-below.png); [release notes](../evidence/screenshots/OPS-14-release-notes-no-approved-extension.png) | CR-07 approves ₹2,000 net per seller. Checkout placed FreshFarm at ₹993.60 net while the combined seller net was ₹3,643.20; the sub-order was canceled. Exact threshold behavior remains untested. |
