@@ -51,3 +51,9 @@ Input: seller2 imported a one-row update for dedicated SKU-QA-20261115: piece pr
 UI result: import reported 1 row and 0 errors. Buyer catalogue showed piece ₹13 and case 2 × ₹26.
 Cleanup: imported original test fixture values: piece price ₹12, case size 1, case price ₹12, stock 11. Buyer catalogue confirmed piece ₹12 and case 1 × ₹12. Existing CSV-02 readback separately verified seller product stock updates.
 Result: PASS.
+
+
+LOG-04 buyer3 UTF-8 export
+UI action: operator clicked Run export now and downloaded the logistics CSV.
+Output check: decoded as UTF-8; header was order_number,buyer_name,delivery_address,delivery_date,slot_start,slot_end,pieces. The file had one data row, but no Hindi characters / buyer3 display name, so preservation of the buyer3 Unicode name was not exercised. The downloaded row is not committed because it contains demo delivery data.
+Result: SKIPPED; no eligible buyer3 export row was available.

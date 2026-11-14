@@ -16,7 +16,7 @@
 - **SUPERSEDED:** An approved release note replaces the original rule.
 - **OUT OF SCOPE:** The requirement requires API/load testing rather than UI testing.
 
-The UI case sheet contains **115 cases: 37 PASS, 22 FAIL, 21 PARTIAL, 4 SKIPPED, 30 NOT RUN, and 1 SUPERSEDED**. Eighty cases have execution evidence (PASS, FAIL, or PARTIAL). Five cases compare the actual UI with the five `docs/design` wireframes. API-only, metrics, rate-limit, and load-test cases are excluded. Do not infer backend behavior from UI controls or screenshots.
+The UI case sheet contains **115 cases: 37 PASS, 22 FAIL, 21 PARTIAL, 5 SKIPPED, 29 NOT RUN, and 1 SUPERSEDED**. Eighty cases have execution evidence (PASS, FAIL, or PARTIAL). Five cases compare the actual UI with the five `docs/design` wireframes. API-only, metrics, rate-limit, and load-test cases are excluded. Do not infer backend behavior from UI controls or screenshots.
 
 ## Business rules
 
@@ -52,7 +52,7 @@ The UI case sheet contains **115 cases: 37 PASS, 22 FAIL, 21 PARTIAL, 4 SKIPPED,
 | Requirement | UI status | UI cases / evidence | UI coverage gap |
 |---|---|---|---|
 | IF-01 — Seller CSV import and row-level reporting | PARTIAL; CSV-04/05 FAIL | CSV-01 through CSV-07; [seller products screenshot](../evidence/screenshots/UI-SELLER-PRODUCTS-STOCK-AND-CSV.png); [CSV import run evidence](../evidence/api-logs/CSV-import-ui-observation.txt); WC-019 | CSV-01/02/03/06/07 passed; CSV-04/05 failed due misleading import counts and missing row-level errors |
-| IF-02 — Logistics export schema and eligible rows | PARTIAL | LOG-01 through LOG-05; [downloaded CSV](../evidence/downloads/IF02-logistics-export-header-only.csv); [hourly run observation](../evidence/ui-observations/UI-regression-2026-11-15.txt) | UI-triggered export header decoded as UTF-8 and matched required order; hourly run history was visible, but scheduled output schema and eligibility remain unverified |
+| IF-02 — Logistics export schema and eligible rows | PARTIAL | LOG-01 through LOG-05; [downloaded CSV](../evidence/downloads/IF02-logistics-export-header-only.csv); [hourly run observation](../evidence/ui-observations/UI-regression-2026-11-15.txt) | Manual export decoded as UTF-8 and its header matched required order; the one row was not buyer3. Hourly run history was visible, but scheduled output schema and eligibility remain unverified |
 | IF-03 — Partner API pagination and offer update | OUT OF SCOPE | API-01 through API-05 excluded from the UI sheet | Partner API is not a browser UI workflow |
 
 ## Non-functional requirements
