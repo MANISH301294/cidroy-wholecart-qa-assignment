@@ -1,9 +1,11 @@
-# WholeCart UI Defect Log
+# WholeCart Defect Log
 
 **Environment:** Assigned `manish-dba39f` demo copy  
-**Execution date:** 2026-11-14  
-**Scope:** Browser UI only  
-**Status:** Thirteen UI defects are currently confirmed.
+**Execution dates:** 2026-11-14 and 2026-11-15
+
+**Scope:** Browser UI and integration API
+
+**Status:** This log includes thirteen UI defects and two integration API defects.
 
 ## WC-002 — Checkout success message omits required wording and order number
 
@@ -138,6 +140,26 @@
 - **Actual:** The UI release notes list CR-07 and CR-09 as approved and CR-11 as deferred; they do not list an OPS-14 extension. Checkout nevertheless displayed the expired pilot banner and charged ₹0 delivery for the Coastal sub-order.
 - **Evidence:** [Checkout totals and expired pilot banner](../evidence/screenshots/CHK-02-two-seller-total-above-min-one-below.png), [release notes](../evidence/screenshots/OPS-14-release-notes-no-approved-extension.png), [configured delivery fee](../evidence/screenshots/UI-OPERATOR-SETTINGS.png).
 
+## WC-019 — Seller CSV import reports malformed rows as imported
+
+- **Severity** · S3 Major
+- **Requirement and cases** · IF-01, CSV-04 and CSV-05
+- **Environment and data** · Assigned WholeCart demo, seller1, 15 November 2026. Test SKU prefix `QA-CSV-A8FDC0A2`.
+- **Steps** · Submit a CSV with one valid row and one row with piece price `bad` to `POST /api/seller/products/import`. Submit a second CSV with four rows containing tax rate 7, stock −1, case size 0, and piece price −1 respectively.
+- **Expected** · Import the valid row and report the line number and reason for each invalid row.
+- **Actual** · Both uploads returned HTTP 200. The mixed file reported 2 imports and the invalid-only file reported 4 imports. Both returned `errors: []`. The malformed SKUs were absent in the later seller product readback.
+- **Evidence** · [CSV-04 response](../evidence/api-logs/integration-follow-up.txt#L7) · [CSV-05 response](../evidence/api-logs/integration-follow-up.txt#L8) · [CSV-04 triage](triage/CSV-04.md) · [CSV-05 triage](triage/CSV-05.md)
+
+## WC-020 — Logistics CSV reverses delivery slot times
+
+- **Severity** · S3 Major
+- **Requirement and case** · IF-02, LOG-SLOT
+- **Environment and data** · Assigned WholeCart demo, 15 November 2026. Order WC-01082-1 booked for 16 November, 08:00–11:00, with two 12-piece cases.
+- **Steps** · Place the order as the buyer, accept it as the seller, and generate a logistics export as the operator.
+- **Expected** · The accepted order row shows `slot_start=08:00`, `slot_end=11:00`, and `pieces=24`.
+- **Actual** · The row showed `slot_start=11:00`, `slot_end=08:00`, and `pieces=24`. The test order was cancelled and excluded from the next export.
+- **Evidence** · [Export result](../evidence/api-logs/integration-follow-up.txt#L31) · [LOG-SLOT triage](triage/LOG-SLOT.md)
+
 ## Reproduction safety
 
-This report includes browser-visible observations only. Do not use any state-changing scenario against production. Most lifecycle and order mutation cases in the UI sheet are marked NOT RUN.
+Do not use any state-changing scenario against production. Most lifecycle and order mutation cases in the UI sheet are marked NOT RUN.

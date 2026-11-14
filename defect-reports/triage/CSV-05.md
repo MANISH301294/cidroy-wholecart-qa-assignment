@@ -12,4 +12,4 @@ Submit four test rows containing tax rate 7, stock −1, case size 0, and piece 
 
 **Actual** · HTTP 200 with `{"imported":4,"errors":[]}`. The response reports success for each submitted row.
 
-[API execution evidence](../../evidence/api-logs/integration-follow-up.txt)
+[API execution evidence](../../evidence/api-logs/integration-follow-up.txt#L8)

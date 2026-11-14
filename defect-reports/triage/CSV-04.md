@@ -12,4 +12,4 @@ Upload a UTF-8 product CSV with the required header, one valid existing test SKU
 
 **Actual** · HTTP 200 with `{"imported":2,"errors":[]}`.
 
-[API execution evidence](../../evidence/api-logs/integration-follow-up.txt)
+[API execution evidence](../../evidence/api-logs/integration-follow-up.txt#L7)

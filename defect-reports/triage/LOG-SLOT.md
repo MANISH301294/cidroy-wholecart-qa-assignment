@@ -12,4 +12,4 @@ Place order WC-01082-1 in an 08:00–11:00 slot for two 12-piece cases. As the s
 
 **Actual** · `slot_start=11:00`, `slot_end=08:00`, `pieces=24`. The fixture order was cancelled and excluded from a subsequent export.
 
-[API execution evidence](../../evidence/api-logs/integration-follow-up.txt)
+[API execution evidence](../../evidence/api-logs/integration-follow-up.txt#L31)
