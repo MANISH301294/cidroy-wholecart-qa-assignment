@@ -2,7 +2,7 @@
 
 **Release recommendation · Hold.** Checkout can oversell inventory and create duplicate orders. The buyer UI also accepted a seller subtotal below the approved minimum, and invoices omit required supply information.
 
-Published evidence masks fixture credentials and invoice identifiers. Testing was recorded on the assigned WholeCart demo on 14 November 2026. Of 115 UI cases, 26 passed, 19 failed, 18 were partial, 3 were skipped, 48 were not run, and 1 was superseded. The focused API results and historical findings are documented in the release report.
+Testing was recorded on the assigned WholeCart demo on 14 November 2026. Of 115 UI cases, 26 passed, 19 failed, 18 were partial, 3 were skipped, 48 were not run, and 1 was superseded. The focused API results and historical findings are documented in the release report.
 
 ## Submission
 

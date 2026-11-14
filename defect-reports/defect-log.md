@@ -29,10 +29,10 @@
 
 - **Severity:** S1 Blocker
 - **Requirements:** CR-09, BR-19, screen 5.4 Invoice
-- **Preconditions/data:** Delivered invoices INV-00005, INV-00071, and INV-00073; buyer GSTIN prefix 30 (Goa).
+- **Preconditions/data:** Delivered invoices INV-00005, INV-00071, and INV-00073; use the buyer GSTIN to determine the expected state name and code.
 - **Steps:** Open the delivered invoices in the buyer UI. Inspect seller identity, supply details, buyer details, line items, tax, fee, and total.
-- **Expected:** Show supply type B2B, Place of supply Goa (30), seller GSTIN, buyer name/GSTIN/address, all lines, tax by rate, a separate delivery-fee line, and a total matching the order.
-- **Actual:** The UI omits B2B, Place of supply Goa (30), seller GSTIN, and the separate delivery-fee line. For INV-00071 and INV-00073 the displayed invoice totals still match their order totals: ₹504.36 and ₹2,950.00.
+- **Expected:** Show supply type B2B, the place-of-supply state name and code derived from the buyer GSTIN, seller GSTIN, buyer name/GSTIN/address, all lines, tax by rate, a separate delivery-fee line, and a total matching the order.
+- **Actual:** The UI omits the supply type, place of supply, seller GSTIN, and the separate delivery-fee line. For INV-00071 and INV-00073 the displayed invoice totals still match their order totals: ₹504.36 and ₹2,950.00.
 - **Evidence:** [INV-00005 screenshot](../evidence/screenshots/CR-09-invoice-missing-supply-details.png), [INV-00073 CR-09 screenshot](../evidence/screenshots/INV-00073-CR09-invoice-missing-fields.png), [INV-00071 calculation](../evidence/screenshots/INV-00071-invoice-ui-calculation.png), and [INV-00073 calculation](../evidence/screenshots/INV-00073-invoice-ui-calculation.png). Cases INV-02, INV-04, INV-05, and INV-CR09-STATE.
 
 ## WC-008 — Blank login fields show raw validation response

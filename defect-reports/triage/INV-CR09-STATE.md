@@ -8,17 +8,17 @@
 
 ## Reproduce
 
-**Data and setup** · Delivered invoice INV-00073; buyer GSTIN prefix 30; buyer address in Goa
+**Data and setup** · Delivered invoice INV-00073; buyer GSTIN with a known state prefix
 
 Open invoice INV-00073 and compare the displayed place of supply with the buyer GSTIN prefix.
 
 ## Expected
 
-Show Place of supply: Goa (30), derived from GSTIN state code 30.
+Show the place-of-supply state name and code derived from the buyer GSTIN.
 
 ## Observed
 
-Buyer GSTIN prefix 30 and Goa address were visible, but the invoice did not show Place of supply: Goa (30).
+The buyer GSTIN and address were visible, but the invoice did not show the place of supply.
 
 Required supply state name and code are absent from the invoice UI.
 

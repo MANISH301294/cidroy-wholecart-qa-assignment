@@ -6,8 +6,8 @@
       "buyer_account": "buyer2",
       "invoice_number": "INV-00005",
       "order_number": "WC-01005-1",
-      "buyer_gstin": "30[redacted]",
-      "seller_gstin": "27[redacted]",
+      "buyer_gstin": "30AAFCD2222B1Z2",
+      "seller_gstin": "27AABCF5678D1Z2",
       "supply_type_present": false,
       "place_of_supply_present": false
     },
@@ -15,8 +15,8 @@
       "buyer_account": "buyer2",
       "invoice_number": "INV-00003",
       "order_number": "WC-01003-1",
-      "buyer_gstin": "30[redacted]",
-      "seller_gstin": "30[redacted]",
+      "buyer_gstin": "30AAFCD2222B1Z2",
+      "seller_gstin": "30AADCC9012E1Z9",
       "supply_type_present": false,
       "place_of_supply_present": false
     },
@@ -24,8 +24,8 @@
       "buyer_account": "buyer2",
       "invoice_number": "INV-00001",
       "order_number": "WC-01001-1",
-      "buyer_gstin": "30[redacted]",
-      "seller_gstin": "30[redacted]",
+      "buyer_gstin": "30AAFCD2222B1Z2",
+      "seller_gstin": "30AAACW1234C1Z5",
       "supply_type_present": false,
       "place_of_supply_present": false
     },
@@ -33,8 +33,8 @@
       "buyer_account": "buyer3",
       "invoice_number": "INV-00006",
       "order_number": "WC-01006-1",
-      "buyer_gstin": "30[redacted]",
-      "seller_gstin": "30[redacted]",
+      "buyer_gstin": "30AAFCB3333C1Z3",
+      "seller_gstin": "30AADCC9012E1Z9",
       "supply_type_present": false,
       "place_of_supply_present": false
     },
@@ -42,8 +42,8 @@
       "buyer_account": "buyer3",
       "invoice_number": "INV-00004",
       "order_number": "WC-01004-1",
-      "buyer_gstin": "30[redacted]",
-      "seller_gstin": "30[redacted]",
+      "buyer_gstin": "30AAFCB3333C1Z3",
+      "seller_gstin": "30AAACW1234C1Z5",
       "supply_type_present": false,
       "place_of_supply_present": false
     },
@@ -51,8 +51,8 @@
       "buyer_account": "buyer3",
       "invoice_number": "INV-00002",
       "order_number": "WC-01002-1",
-      "buyer_gstin": "30[redacted]",
-      "seller_gstin": "27[redacted]",
+      "buyer_gstin": "30AAFCB3333C1Z3",
+      "seller_gstin": "27AABCF5678D1Z2",
       "supply_type_present": false,
       "place_of_supply_present": false
     }

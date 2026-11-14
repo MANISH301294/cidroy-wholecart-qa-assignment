@@ -5,12 +5,12 @@
   "order_number": "WC-01005-1",
   "buyer": {
     "display_name": "Café Dosa Corner",
-    "gstin": "30[redacted]",
-    "address": "[redacted]"
+    "gstin": "30AAFCD2222B1Z2",
+    "address": "4 Miramar Beach Road, Panaji, Goa"
   },
   "seller": {
     "name": "FreshFarm Foods",
-    "gstin": "27[redacted]"
+    "gstin": "27AABCF5678D1Z2"
   },
   "lines": [
     {
