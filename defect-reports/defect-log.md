@@ -3,7 +3,7 @@
 **Environment:** Assigned `manish-dba39f` demo copy  
 **Execution date:** 2026-11-14  
 **Scope:** Browser UI only  
-**Status:** Thirteen UI defects are currently confirmed. WC-009 is a historical text-search observation and is excluded from confirmed defects.
+**Status:** Thirteen UI defects are currently confirmed.
 
 ## WC-002 — Checkout success message omits required wording and order number
 
@@ -44,18 +44,6 @@
 - **Expected:** Remain on the login page and show clear required-field messages; do not expose raw server output.
 - **Actual:** Each submission renders raw HTTP 422 validation JSON instead of clear field-level messages.
 - **Evidence:** [Both blank](../evidence/screenshots/UI-LOGIN-BOTH-BLANK-422.png), [username blank](../evidence/screenshots/UI-LOGIN-BLANK-USERNAME-422.png), and [password blank](../evidence/screenshots/UI-LOGIN-BLANK-PASSWORD-422.png). Cases LOGIN-EMPTY-01 through LOGIN-EMPTY-03.
-
-## WC-009 — Historical text-search observation (retest passed)
-
-- **Severity:** S3 Major
-- **Requirement:** Buyer browse/search; BR-02
-- **Preconditions/data:** Buyer catalogue shows 552 products; exact query `SKU-0001`.
-- **Steps:** Open Catalogue, enter `SKU-0001`, activate Search, and inspect the URL, result count, and visible products.
-- **Expected:** Results are limited to products matching the submitted query.
-- **Earlier actual:** The URL remained `/catalogue`, the listing remained at 552 products, and unrelated products remained visible.
-- **Latest result:** Exact SKU-0001 search returned one product; partial query `Hill` returned 41 matching products. The defect was not reproduced and CAT-03 now passes.
-- **Evidence:** [Earlier search screenshot](../evidence/screenshots/UI-CATALOGUE-SEARCH-NO-FILTER.png), [exact SKU results](../evidence/screenshots/CAT-03-search-exact-sku-filters.png), and [partial-name results](../evidence/screenshots/CAT-03-search-partial-name-filters.png).
-- **Coverage impact:** CAT-02 is now a confirmed zero-stock visibility failure; see WC-014.
 
 ## WC-010 — Cart quantity control and summary layout differ from design
 

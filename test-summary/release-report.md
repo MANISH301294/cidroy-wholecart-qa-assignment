@@ -16,7 +16,7 @@
 - **S3 Major · 6** — WC-006, WC-011, WC-013, WC-014, WC-015, WC-016.
 - **S4 Minor · 5** — WC-001, WC-002, WC-003, WC-008, WC-010.
 
-The counts cover 17 distinct open findings. WC-009 is historical because the latest exact-SKU and partial-name search retest passed. The UI and API observations for WC-007 count as one defect.
+The counts cover 17 distinct open findings. The UI and API observations for WC-007 count as one defect.
 
 ## Open risks
 

@@ -11,4 +11,4 @@ The reported outcomes are tied to captured browser evidence. AI-generated test i
 
 ## Correction during packaging
 
-The assistant-prepared scenario summary still reported 12 failures and described catalogue search as broken. The latest case sheet recorded 19 failures overall and marked CAT-03 as passing after exact-SKU and partial-name retests. I reconciled the counts and kept WC-009 as historical evidence with its retest result. See [CAT-03 in the case sheet](../test-scenarios/ui-test-cases.csv) and the [execution summary](../test-summary/execution-summary.md).
+The assistant-prepared scenario summary still reported 12 failures and described catalogue search as broken. The latest case sheet recorded 19 failures overall and marked CAT-03 as passing after exact-SKU and partial-name retests. I reconciled the counts. See [CAT-03 in the case sheet](../test-scenarios/ui-test-cases.csv) and the [execution summary](../test-summary/execution-summary.md).

@@ -36,7 +36,6 @@ Sixty-three cases have execution evidence (PASS, FAIL, or PARTIAL). Five additio
 - Invoice total text has very low contrast and is difficult to read.
 
 See the [defect log](../defect-reports/defect-log.md) for reproduction steps, expected/actual results, severity, and screenshots.
-The earlier Catalogue Search defect (WC-009) was not reproduced in the latest run: exact SKU search returned one result and partial search filtered the catalogue.
 
 ## UI checks that passed
 
