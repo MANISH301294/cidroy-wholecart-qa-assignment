@@ -24,7 +24,7 @@ Quantity control and summary/button placement differ from the design; see WC-010
 
 ## Evidence
 
-- [DOC-DESIGN-WIREFRAMES.png](../../evidence/screenshots/DOC-DESIGN-WIREFRAMES.png)
+- [Cart §5.1 wireframe](../../evidence/screenshots/DESIGN-51-cart-wireframe.png)
 - [UI-CART-QTY-CONTROL.png](../../evidence/screenshots/UI-CART-QTY-CONTROL.png)
 
 [Defect details](../defect-log.md)
