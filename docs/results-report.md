@@ -1,6 +1,6 @@
 # WholeCart release test report
 
-**Release:** WholeCart 1.0 marketplace · **Spec:** WC-FDD-1.0-ce97 · **Environment:** `manish-dba39f` demo copy · **Run date:** 2026-11-14
+**Release:** WholeCart 1.0 marketplace · **Spec:** WC-FDD-1.0-ce97 · **Environment:** `manish-dba39f` demo copy · **Run date:** 2026-11-14; regression follow-up 2026-11-15
 
 ## Executive result
 
@@ -28,7 +28,7 @@
 
 | S1 | S2 | S3 | S4 |
 |---:|---:|---:|---:|
-| 3 verified | 0 verified | 1 verified | 3 verified |
+| 5 verified | 2 verified | 8 verified | 5 verified |
 
 WC-001: missing favicon (S4); WC-002: checkout success message missing required order number (S4); WC-003: invalid actions shown for cancelled order (S4); WC-004: concurrent overselling (S1); WC-005: duplicate orders on concurrent double-submit (S1); WC-006: intermittent order-history HTTP 500 after concurrent checkouts (S3); WC-007: mandatory invoice fields omitted (S1). Passing checks apply only to the listed tests and do not imply broader areas are defect-free.
 
@@ -43,6 +43,10 @@ WC-001: missing favicon (S4); WC-002: checkout success message missing required 
 - 30 distinct buyer accounts and prepared carts are required for an NF-01 result; load testing was not run.
 - CR-07/CR-09 override the conflicting/incomplete FDD text; CR-11 attachments are deferred.
 
+## Regression follow-up (2026-11-15)
+
+`npm run test:regression` is the repeatable one-command suite (API read-only/negative checks plus login and CSV validation UI checks). The 32-test command completed with **16 API passed, 4 fixture-dependent API skipped, and 12 UI tests unable to start** because Chromium could not launch in this macOS sandbox before assertions ran. The same CSV and catalogue cases were executed manually in the in-app browser: CHK-04, CART-10, CSV-01/02/03/06/07 and CAT-06 passed; CSV-04/05 failed under WC-019. OPS-01 was partial and OPS-02 skipped. The UI case sheet now records 34 PASS, 22 FAIL, 19 PARTIAL, 4 SKIPPED, 35 NOT RUN, and 1 SUPERSEDED. See [regression suite](regression-suite.md), [UI execution summary](../test-summary/execution-summary.md), and [CSV-04 triage](../cidroy-qa-assignment/defect-reports/triage/CSV-04.md) and [CSV-05 triage](../cidroy-qa-assignment/defect-reports/triage/CSV-05.md).
+
 ## Release recommendation
 
-Do not release until WC-004, WC-005, and WC-007 are fixed and retested; investigate and retest WC-006. CR-07 passed the tested cases. This project contains QA tests and reports, not the marketplace application source, so no product-code fix was made here.
+Do not release until WC-004, WC-005, WC-007, WC-012, and WC-021 are fixed and retested; fix WC-019 row-level CSV validation and investigate WC-006/WC-020. CR-07 passed the tested cases. This project contains QA tests and reports, not the marketplace application source, so no product-code fix was made here.

@@ -1,4 +1,4 @@
-Case ID,Surface,Area,Requirement,Status,Defect,Severity,Triage file
+﻿Case ID,Surface,Area,Requirement,Status,Defect,Severity,Triage file
 AUTH-01,UI,Authentication & Role Access,BR-21,PARTIAL,,N/A,
 AUTH-02,UI,Authentication & Role Access,BR-21,PASS,,N/A,
 AUTH-03,UI,Authentication & Role Access,BR-21,PASS,,N/A,
@@ -11,7 +11,7 @@ CAT-02,UI,Catalogue & Product Search,BR-02/BR-22,FAIL,WC-014,S3 Major,../defect-
 CAT-03,UI,Catalogue & Product Search,BR-02/BR-22,PASS,,N/A,
 CAT-04,UI,Catalogue & Product Search,BR-02/BR-22,PARTIAL,,N/A,
 CAT-05,UI,Catalogue & Product Search,BR-02/BR-22,PASS,,N/A,
-CAT-06,UI,Catalogue & Product Search,BR-02/BR-22,NOT RUN,,N/A,
+CAT-06,UI,Catalogue & Product Search,BR-02/BR-22,PASS,,N/A,
 CAT-07,UI,Catalogue & Product Search,BR-02/BR-22,PASS,,N/A,
 CAT-08,UI,Catalogue & Product Search,BR-02/BR-22,PARTIAL,,N/A,
 CART-01,UI,Cart & Quantity,BR-01/BR-03/Screen 5.1,PASS,,N/A,
@@ -23,11 +23,11 @@ CART-06,UI,Cart & Quantity,BR-01/BR-03/Screen 5.1,PASS,,N/A,
 CART-07,UI,Cart & Quantity,BR-01/BR-03/Screen 5.1,PARTIAL,,N/A,
 CART-08,UI,Cart & Quantity,BR-01/BR-03/Screen 5.1,PASS,,N/A,
 CART-09,UI,Cart & Quantity,BR-01/BR-03/Screen 5.1,FAIL,WC-012,S1 Blocker,../defect-reports/triage/CART-09.md
-CART-10,UI,Cart & Quantity,BR-01/BR-03/Screen 5.1,NOT RUN,,N/A,
+CART-10,UI,Cart & Quantity,BR-01/BR-03/Screen 5.1,PASS,,N/A,
 CHK-01,UI,"Checkout, Tax & Delivery Fees",CR-07/BR-07/BR-08/BR-09/BR-10/Screen 5.2,SUPERSEDED,,N/A,
 CHK-02,UI,"Checkout, Tax & Delivery Fees",CR-07/BR-07/BR-08/BR-09/BR-10/Screen 5.2,FAIL,WC-017,S2 Critical,../defect-reports/triage/CHK-02.md
 CHK-03,UI,"Checkout, Tax & Delivery Fees",CR-07/BR-07/BR-08/BR-09/BR-10/Screen 5.2,FAIL,WC-018,S2 Critical,../defect-reports/triage/CHK-03.md
-CHK-04,UI,"Checkout, Tax & Delivery Fees",CR-07/BR-07/BR-08/BR-09/BR-10/Screen 5.2,NOT RUN,,N/A,
+CHK-04,UI,"Checkout, Tax & Delivery Fees",CR-07/BR-07/BR-08/BR-09/BR-10/Screen 5.2,PASS,,N/A,
 CHK-05,UI,"Checkout, Tax & Delivery Fees",CR-07/BR-07/BR-08/BR-09/BR-10/Screen 5.2,SKIPPED,,N/A,
 CHK-06,UI,"Checkout, Tax & Delivery Fees",CR-07/BR-07/BR-08/BR-09/BR-10/Screen 5.2,PARTIAL,,N/A,
 CHK-07,UI,"Checkout, Tax & Delivery Fees",CR-07/BR-07/BR-08/BR-09/BR-10/Screen 5.2,PARTIAL,,N/A,
@@ -90,12 +90,12 @@ SEL-02,UI,Seller Products & CSV Import (UI),BR-21,NOT RUN,,N/A,
 CSV-01,API,Seller Products & CSV Import,IF-01,PASS,,N/A,
 CSV-02,API,Seller Products & CSV Import,IF-01,PASS,,N/A,
 CSV-03,API,Seller Products & CSV Import,IF-01,PASS,,N/A,
-CSV-04,API,Seller Products & CSV Import,IF-01,FAIL,WC-019,S3 Major,../defect-reports/triage/CSV-04.md
-CSV-05,API,Seller Products & CSV Import,IF-01,FAIL,WC-019,S3 Major,../defect-reports/triage/CSV-05.md
+CSV-04,API,Seller Products & CSV Import,IF-01,FAIL,WC-019,S3,defect-reports/triage/CSV-04.md
+CSV-05,API,Seller Products & CSV Import,IF-01,FAIL,WC-019,S3,defect-reports/triage/CSV-05.md
 CSV-06,API,Seller Products & CSV Import,IF-01,PASS,,N/A,
 CSV-07,API,Seller Products & CSV Import,IF-01,PASS,,N/A,
-OPS-01,UI,"Operator, Logistics & Non-functional",BR-23/Operator UI,NOT RUN,,N/A,
-OPS-02,UI,"Operator, Logistics & Non-functional",BR-23/Operator UI,NOT RUN,,N/A,
+OPS-01,UI,"Operator, Logistics & Non-functional",BR-23/Operator UI,PARTIAL,,N/A,
+OPS-02,UI,"Operator, Logistics & Non-functional",BR-23/Operator UI,SKIPPED,,N/A,
 LOG-01,UI,"Operator, Logistics & Non-functional",IF-02/Operator UI,PASS,,N/A,
 LOG-02,UI,"Operator, Logistics & Non-functional",IF-02/Operator UI,SKIPPED,,N/A,
 LOG-03,UI,"Operator, Logistics & Non-functional",IF-02/Operator UI,SKIPPED,,N/A,

@@ -5,7 +5,7 @@
 
 **Scope:** Browser UI and integration API
 
-**Status:** This log includes thirteen UI defects and two integration API defects.
+**Status:** This log includes fourteen UI defects and two integration API defects.
 
 ## WC-002 — Checkout success message omits required wording and order number
 
@@ -147,8 +147,8 @@
 - **Environment and data** · Assigned WholeCart demo, seller1, 15 November 2026. Test SKU prefix `QA-CSV-A8FDC0A2`.
 - **Steps** · Submit a CSV with one valid row and one row with piece price `bad` to `POST /api/seller/products/import`. Submit a second CSV with four rows containing tax rate 7, stock −1, case size 0, and piece price −1 respectively.
 - **Expected** · Import the valid row and report the line number and reason for each invalid row.
-- **Actual** · Both uploads returned HTTP 200. The mixed file reported 2 imports and the invalid-only file reported 4 imports. Both returned `errors: []`. The malformed SKUs were absent in the later seller product readback.
-- **Evidence** · [CSV-04 response](../evidence/api-logs/integration-follow-up.txt#L7) · [CSV-05 response](../evidence/api-logs/integration-follow-up.txt#L8) · [CSV-04 triage](triage/CSV-04.md) · [CSV-05 triage](triage/CSV-05.md)
+- **Actual** · API uploads returned HTTP 200, counted 2 and 4 rows as imported, returned `errors: []`, and the malformed SKUs were absent in later readback. The browser UI reproduced the same behavior: mixed invalid tax-55 upload reported 2 rows/0 errors; invalid-only tax, negative stock, zero case size and negative price reported 4 rows/0 errors. Invalid SKUs were absent from the seller list, with no row-level reason shown.
+- **Evidence** · [CSV-04 response](../evidence/api-logs/integration-follow-up.txt#L7) · [CSV-05 response](../evidence/api-logs/integration-follow-up.txt#L8) · [UI repro](../evidence/ui-observations/CSV-import-2026-11-15.txt) · [CSV-04 triage](triage/CSV-04.md) · [CSV-05 triage](triage/CSV-05.md)
 
 ## WC-020 — Logistics CSV reverses delivery slot times
 

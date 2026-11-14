@@ -16,9 +16,7 @@
 - **SUPERSEDED:** An approved release note replaces the original rule.
 - **OUT OF SCOPE:** The requirement requires API/load testing rather than UI testing.
 
-The UI case sheet contains **115 cases: 26 PASS, 20 FAIL, 18 PARTIAL, 3 SKIPPED, 47 NOT RUN, and 1 SUPERSEDED**. Sixty-four cases have execution evidence (PASS, FAIL, or PARTIAL). Five cases compare the actual UI with the five `docs/design` wireframes. API-only, metrics, rate-limit, and load-test cases are excluded. Do not infer backend behavior from UI controls or screenshots.
-
-[15 November API follow-up](../test-summary/requirements-follow-up.md) covers slot dates, logistics export, partner authentication, search latency, and metrics.
+The UI case sheet contains **115 cases: 34 PASS, 22 FAIL, 19 PARTIAL, 4 SKIPPED, 35 NOT RUN, and 1 SUPERSEDED**. Seventy-five cases have execution evidence (PASS, FAIL, or PARTIAL). Five cases compare the actual UI with the five `docs/design` wireframes. API-only, metrics, rate-limit, and load-test cases are excluded. Do not infer backend behavior from UI controls or screenshots.
 
 ## Business rules
 
@@ -27,7 +25,7 @@ The UI case sheet contains **115 cases: 26 PASS, 20 FAIL, 18 PARTIAL, 3 SKIPPED,
 | BR-01 — Piece-based stock and no overselling | FAIL | CART-09; [overstock order](../evidence/screenshots/CART-09-overstock-order-placed.png) | Checkout accepted 201 pieces while the product page showed 161 in stock; the test order was canceled |
 | BR-02 — Zero-stock products hidden | FAIL | CAT-02; [SKU-0073 search result](../evidence/screenshots/CAT-02-search-includes-SKU-0073.png) | SKU-0064 and SKU-0073 each showed zero stock on their product pages but remained in buyer search |
 | BR-03 — Quantity per line 1–99 | PARTIAL | CART-03, CART-05, CART-06; [quantity 99](../evidence/screenshots/CART-03-quantity-99-valid.png) | 1 and 99 were accepted, 100 rejected, and 21 was added from the product page; the cart control is still a textbox rather than the specified 1–20 dropdown |
-| BR-04 — ₹1,500 minimum | SUPERSEDED; CR-07 minimum FAIL | CHK-01, CHK-02; [checkout totals](../evidence/screenshots/CHK-02-two-seller-total-above-min-one-below.png); [release notes](../evidence/screenshots/OPS-14-release-notes-no-approved-extension.png) | CR-07 approves ₹2,000 net per seller. Checkout placed FreshFarm at ₹993.60 net while the combined seller net was ₹3,643.20; the sub-order was canceled. Exact thresholds were untested in the UI. The separate single-seller API run covered ₹1,999.99, ₹2,000.00 and ₹2,000.01. |
+| BR-04 — ₹1,500 minimum | SUPERSEDED; CR-07 minimum FAIL | CHK-01, CHK-02; [checkout totals](../evidence/screenshots/CHK-02-two-seller-total-above-min-one-below.png); [release notes](../evidence/screenshots/OPS-14-release-notes-no-approved-extension.png) | CR-07 approves ₹2,000 net per seller. Checkout placed FreshFarm at ₹993.60 net while the combined seller net was ₹3,643.20; the sub-order was canceled. Exact threshold behavior remains untested. |
 | BR-05 — Four slots, today through +7, capacity 5 | PARTIAL | SLOT-01, SLOT-02; [checkout date screenshot](../evidence/screenshots/UI-CHECKOUT-DATE-PLUS-7-SLOTS.png); settings snapshot | Today +7 was enabled, +8 disabled, and all four slot labels appeared; today/past boundaries and capacity-full behavior were not tested |
 | BR-06 — Same-day afternoon slots before cutoff | FAIL | SLOT-03 through SLOT-05; [at-cutoff order](../evidence/screenshots/SLOT-04-order-accepted-at-cutoff.png) | Before-cutoff slots were available and after-cutoff slots were disabled; at exactly 10:00 an afternoon order was accepted |
 | BR-07 — Tax aggregated by rate, rounded half-up once | PARTIAL | CHK-05/CHK-06, INV-03; [invoice calculations](../evidence/screenshots/) | Single-line 5% and 18% arithmetic was observed; multi-line rate aggregation was unavailable |
@@ -42,20 +40,18 @@ The UI case sheet contains **115 cases: 26 PASS, 20 FAIL, 18 PARTIAL, 3 SKIPPED,
 | BR-16 — Reorder adds every past-order line on every use | PASS | ORD-12; [repeat reorder](../evidence/screenshots/ORD-12-repeat-reorder-doubles-quantity.png) | Two reorder actions for a 16-piece line resulted in 32 pieces; other historical multi-line cases were not tested. |
 | BR-17 — Delivered-only refunds/exchanges and per-line quantity cap | PARTIAL | REF-01 through REF-10; [excess quantity rejected](../evidence/screenshots/REF-03-excess-quantity-rejected.png) | The UI rejected refund quantity 3 for a 2-piece order line; valid refund/exchange requests and seller decisions were not exercised |
 | BR-18 — Tax-inclusive refunds; exchange returns no money; seller decision | NOT RUN | REF-01 through REF-10 | No refund/exchange UI approval, rejection, replacement, or payment flow verified |
-| BR-19 — Invoice identity, lines, taxes, fee, total | FAIL | INV-02 through INV-05 and INV-CR09-STATE; [defect log](../defect-reports/defect-log.md) | Arithmetic and total reconciliation passed for two invoices; B2B, place of supply, seller GSTIN, and separate fee line are missing |
+| BR-19 — Invoice identity, lines, taxes, fee, total | FAIL | INV-02 through INV-05 and INV-CR09-STATE; [defect log](../defect-reports/defect-log.md) | Arithmetic and total reconciliation passed for two invoices; B2B, Goa (30), seller GSTIN, and separate fee line are missing |
 | BR-20 — Monthly delivered-order statement less approved refunds | FAIL | INV-06 through INV-09; [November statement](../evidence/screenshots/INV-06-statement-includes-canceled-orders.png) | November statement included canceled orders and their amounts; refund deduction and month-boundary behavior remain unverified |
 | BR-21 — Buyers/sellers see only their own records | FAIL | INV-10 | Buyer1 opened another buyer’s invoice by direct URL. See [WC-021](../defect-reports/triage/INV-10.md). |
-| BR-22 — Catalogue prices exclude tax; checkout shows per-seller tax/fee | PARTIAL | CAT-04, CHK-02/CHK-03; [two-seller checkout](../evidence/screenshots/CHK-02-two-seller-total-above-min-one-below.png) | The two-seller summary showed net, tax, delivery, and totals; it incorrectly waived fee after OPS-14 expiry. Catalogue product detail price-before-tax behavior was not independently checked. |
-| BR-23 — Operator settings take effect immediately | PARTIAL | OPS-01/SLOT-08; settings screenshot | Current values were visible; changing a setting and verifying the immediate UI effect was not done |
+| BR-22 — Catalogue prices exclude tax; checkout shows per-seller tax/fee | PARTIAL | CAT-04/CAT-06, CART-10, CHK-02/CHK-03; [two-seller checkout](../evidence/screenshots/CHK-02-two-seller-total-above-min-one-below.png) | The two-seller summary showed net, tax, delivery, and totals; it incorrectly waived fee after OPS-14 expiry. Catalogue product detail price-before-tax behavior was not independently checked. CAT-06 found two distinct seller products sharing a SKU; CART-10 showed distinct piece/case cart lines. |
+| BR-23 — Operator settings take effect immediately | PARTIAL | OPS-01/SLOT-08; settings screenshot | Capacity changed from 5 to 6, persisted after reopening, and was restored to 5; immediate buyer-side effect was not checked |
 | BR-24 — Fixed store clock available; real time is default | PASS | SLOT-03 through SLOT-05, SLOT-09; settings screenshot | Fixed times exercised same-day slot behavior, then real time was restored and saved |
 
 ## Integration requirements visible from UI
 
-The [API execution follow-up](../test-summary/integration-nonfunctional-run.md) records later API results for CSV import, logistics export, and partner authentication.
-
 | Requirement | UI status | UI cases / evidence | UI coverage gap |
 |---|---|---|---|
-| IF-01 — Seller CSV import and row-level reporting | NOT RUN | CSV-01 through CSV-07; [seller products screenshot](../evidence/screenshots/UI-SELLER-PRODUCTS-STOCK-AND-CSV.png) | Import controls were observed, but no file was uploaded |
+| IF-01 — Seller CSV import and row-level reporting | PARTIAL; CSV-04/05 FAIL | CSV-01 through CSV-07; [seller products screenshot](../evidence/screenshots/UI-SELLER-PRODUCTS-STOCK-AND-CSV.png); [CSV import run evidence](../evidence/api-logs/CSV-import-ui-observation.txt); WC-019 | CSV-01/02/03/06/07 passed; CSV-04/05 failed due misleading import counts and missing row-level errors |
 | IF-02 — Logistics export schema and eligible rows | PARTIAL | LOG-01 through LOG-05; [downloaded CSV](../evidence/downloads/IF02-logistics-export-header-only.csv) | UI-triggered export header decoded as UTF-8 and matched required order; no rows existed to verify status filtering, pieces, or hourly behavior |
 | IF-03 — Partner API pagination and offer update | OUT OF SCOPE | API-01 through API-05 excluded from the UI sheet | Partner API is not a browser UI workflow |
 
@@ -63,10 +59,9 @@ The [API execution follow-up](../test-summary/integration-nonfunctional-run.md) 
 
 | Requirement | UI status | UI cases / evidence | UI coverage gap |
 |---|---|---|---|
-| NF-01 — 30 simultaneous checkouts, 95% within 3 seconds | NOT RUN | [Load plan](../docs/load-test.md) | Requires 30 independent prepared buyer carts |
-| NF-02 — Search p95 within 2 seconds | PASS (sampled API workload) | [Follow-up results](../test-summary/requirements-follow-up.md) | 40 sequential requests, p95 394.4 ms. Browser rendering and concurrent search latency were not measured. |
-| NF-03 — 50 RPS ceiling, over-limit 429 and metrics | PARTIAL | [API smoke results](../docs/results-report.md) and [load plan](../docs/load-test.md) | The metrics endpoint is covered by the API smoke suite. Over-limit traffic was not generated. |
-| Responsive layout (UI checklist) | PARTIAL | NF-03; [buyer statement at 320px](../evidence/screenshots/NF-03-buyer-statement-320px.png) | The buyer statement had no horizontal overflow at 320px; seller and operator layouts and other breakpoints remain untested. |
+| NF-01 — 30 simultaneous checkouts, 95% within 3 seconds | OUT OF SCOPE | CHK-12 excluded | Requires controlled load testing, not UI-only execution |
+| NF-02 — Search p95 within 2 seconds | OUT OF SCOPE | NF-02 metrics/API case excluded | Requires performance measurement; UI search itself fails to filter (CAT-03) |
+| NF-03 — Responsive layout | PARTIAL | NF-03; [buyer statement at 320px](../evidence/screenshots/NF-03-buyer-statement-320px.png) | The buyer statement had no horizontal overflow at 320px; seller and operator layouts and other breakpoints remain untested. |
 
 ## Screen requirements
 
@@ -82,4 +77,4 @@ The visual reference for screens 5.1–5.5 is the [captured `docs/design` wirefr
 
 ## Other UI features
 
-The buyer inquiry entry point did not open a form (INQ-01 FAIL); inquiry validation/ownership, seller approval, full seller product editing, CSV import, and end-to-end refund/exchange workflows remain unverified. In the two-seller checkout, one sub-order per seller was created; both orders (WC-01076-1 and WC-01076-2) were canceled after the observations ([order history](../evidence/screenshots/CHK-07-WC-01076-both-canceled.png)). The case sheet records remaining gaps individually.
+The buyer inquiry entry point did not open a form (INQ-01 FAIL); inquiry validation/ownership, seller approval, full seller product editing, CSV Unicode/header validation, and end-to-end refund/exchange workflows remain unverified. In the two-seller checkout, one sub-order per seller was created; both orders (WC-01076-1 and WC-01076-2) were canceled after the observations ([order history](../evidence/screenshots/CHK-07-WC-01076-both-canceled.png)). The case sheet records remaining gaps individually.

@@ -1,0 +1,39 @@
+WholeCart seller CSV import UI observations
+Environment: assigned manish-dba39f demo copy; seller1/seller2 (WholeCart Direct/FreshFarm Foods); buyer1; 2026-11-15
+
+CSV-01 valid import
+Input: SKU-QA-20261115, QA Regression Sample, Grains, case_size=1, piece_price=10.00, case_price=10.00, tax_rate=5, stock=10.
+UI result: Import complete: 1 rows, 0 errors. Seller product list showed SKU-QA-20261115 with submitted values.
+Result: PASS.
+
+CSV-02 existing SKU update
+Input: same seller and SKU; name changed to QA Regression Sample Updated; piece/case price=12.00; stock=11.
+UI result: Import complete: 1 rows, 0 errors. Seller product list showed the updated name, price and stock with a single matching row.
+Result: PASS.
+
+CSV-03 duplicate SKU across sellers / CAT-06 catalogue distinction
+Input: seller1 imported SKU-QA-20261115 under QA Regression Sample Seller 1 at ₹13; seller2 retained the same SKU under QA Regression Sample Updated at ₹12.
+UI result: each seller product list showed its own row. Buyer exact-SKU search returned 2 products with distinct names, prices, and product links (/product/585 and /product/584).
+Result: PASS for CSV-03 and CAT-06.
+
+CSV-04 mixed valid and invalid rows
+Input: one valid update to SKU-QA-20261115 and one new row SKU-QA-INVALID-20261115 with unsupported tax_rate=55.
+UI result: Import complete: 2 rows, 0 errors. The valid SKU updated; the invalid SKU was absent in the seller list and no line-level error was shown.
+Result: FAIL; see WC-019.
+
+CSV-05 invalid tax, stock, case size and price
+Input: four new rows with tax_rate=55, stock=-1, case_size=0, and piece/case price=-12.00.
+UI result: Import complete: 4 rows, 0 errors. No line-level error was shown. Seller-list readback found none of the invalid SKUs.
+Result: FAIL; see WC-019.
+
+CSV-06 Unicode and punctuation
+Input: quoted UTF-8 name `नमस्ते QA, मसाला!` under SKU-QA-20261115 on seller1.
+UI result: seller product list and buyer catalogue preserved the Devanagari text and punctuation.
+Result: PASS.
+
+CSV-07 missing/reordered columns
+Input: one file missing the required `stock` header, then one with all eight headers reordered.
+UI result: missing header displayed the full required-columns message; reordered file reported 1 row and 0 errors, and the seller list showed the row with correct values.
+Result: PASS.
+
+Persistent fixture note: the dedicated valid `SKU-QA-*` regression products remain in the demo catalog because the seller UI exposes no product deletion control. Invalid test rows were absent on readback.

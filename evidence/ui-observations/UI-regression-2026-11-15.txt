@@ -1,0 +1,23 @@
+WholeCart browser UI follow-up observations
+Environment: assigned manish-dba39f demo copy; 2026-11-15
+
+CART-10 mixed seller/unit cart
+Input: buyer1 added one piece of product 585 (seller1/WholeCart Direct, SKU-QA-20261115, ₹13) and one case of product 584 (seller2/FreshFarm Foods, same SKU, ₹12).
+UI result: Cart showed two separate lines (piece and case), retained each product name and price, and calculated ₹25 net.
+Cleanup: authenticated cart cleanup deleted both test cart lines; response showed an empty cart and net total ₹0.
+Result: PASS.
+
+CHK-04 exact ₹3,000 seller subtotal
+Input: buyer1 added 25 pieces of SKU-0510 Chef's Cookies at ₹120 each; displayed net was exactly ₹3,000.
+UI result: Checkout showed WholeCart Direct net ₹3,000, tax ₹540, delivery ₹0, and total ₹3,540. No order was placed.
+Cleanup: authenticated cart cleanup returned an empty cart and net total ₹0.
+Result: PASS for the exact-threshold fee calculation.
+
+OPS-01 operator setting persistence
+Input: changed slot capacity from 5 to 6, saved, reopened settings and observed 6, then restored and saved 5.
+Result: PARTIAL; persistence verified and original setting restored, but immediate buyer checkout behavior was not verified.
+
+OPS-02 seller approval workflow
+UI result: operator seller list showed only three sellers, all approved, and exposed no approval controls or pending seller fixture.
+Result: SKIPPED; no eligible test fixture or approval action was available.
+Evidence: [checkout screenshot at exact ₹3,000](../screenshots/CHK-04-exact-3000-fee-waived.jpg).

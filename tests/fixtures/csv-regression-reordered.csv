@@ -1,0 +1,2 @@
+stock,tax_rate,sku,name,piece_price,case_price,case_size,category
+15,5,SKU-QA-REORDER-20261115,QA Reordered Header Sample,15.00,15.00,1,Grains

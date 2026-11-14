@@ -1,0 +1,5 @@
+sku,name,category,case_size,piece_price,case_price,tax_rate,stock
+SKU-QA-BAD-TAX,QA Invalid Tax,Grains,1,12.00,12.00,55,11
+SKU-QA-BAD-STOCK,QA Negative Stock,Grains,1,12.00,12.00,5,-1
+SKU-QA-BAD-CASE,QA Zero Case Size,Grains,0,12.00,12.00,5,11
+SKU-QA-BAD-PRICE,QA Negative Price,Grains,1,-12.00,-12.00,5,11

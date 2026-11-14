@@ -13,3 +13,8 @@ Submit four test rows containing tax rate 7, stock −1, case size 0, and piece 
 **Actual** · HTTP 200 with `{"imported":4,"errors":[]}`. The response reports success for each submitted row.
 
 [API execution evidence](../../evidence/api-logs/integration-follow-up.txt#L8)
+
+
+## Browser UI retest — 2026-11-15
+
+Seller2 uploaded rows with tax rate 55, stock -1, case size 0, and negative piece/case prices. The UI displayed `Import complete: 4 rows, 0 errors`; none of the invalid SKUs appeared in the seller list and no row-level reasons were shown. [UI evidence](../../evidence/ui-observations/CSV-import-2026-11-15.txt).
