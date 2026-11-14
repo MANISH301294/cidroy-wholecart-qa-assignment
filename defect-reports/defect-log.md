@@ -53,15 +53,7 @@
 - **Steps:** Compare the populated cart with the screen 5.1 wireframe; inspect the quantity control, net total, and checkout button placement.
 - **Expected:** A dropdown with quantities 1–20; the net total and Proceed button follow the wireframe's lower-right placement. Quantities above 20 are added from the product page.
 - **Actual:** The quantity control is a textbox with an Update button. The net total and Proceed button are left-aligned below the table instead of at the wireframe's lower right.
-**Evidence for CART-05 and DESIGN-51**
-
-**Expected cart in §5.1**
-
-![Cart §5.1 showing the quantity dropdown and lower-right checkout summary](../evidence/screenshots/DESIGN-51-cart-wireframe.png)
-
-**Actual cart**
-
-![Actual cart showing a quantity textbox, Update button and left-aligned checkout summary](../evidence/screenshots/UI-CART-QTY-CONTROL.png)
+- **Evidence for CART-05 and DESIGN-51** · [Cart §5.1 requirement and wireframe](../evidence/screenshots/DESIGN-51-cart-wireframe.png) · [Actual cart screenshot](../evidence/screenshots/UI-CART-QTY-CONTROL.png)
 
 ## WC-011 — Invoice total has insufficient visual contrast
 

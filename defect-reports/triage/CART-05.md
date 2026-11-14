@@ -24,6 +24,7 @@ Cart quantity control does not match the specified dropdown UI.
 
 ## Evidence
 
-- [UI-CART-QTY-CONTROL.png](../../evidence/screenshots/UI-CART-QTY-CONTROL.png)
+- [Cart §5.1 requirement and wireframe](../../evidence/screenshots/DESIGN-51-cart-wireframe.png)
+- [Actual cart screenshot](../../evidence/screenshots/UI-CART-QTY-CONTROL.png)
 
 [Defect details](../defect-log.md)
