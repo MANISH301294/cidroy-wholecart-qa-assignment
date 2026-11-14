@@ -18,6 +18,8 @@
 
 The UI case sheet contains **115 cases: 26 PASS, 19 FAIL, 18 PARTIAL, 3 SKIPPED, 48 NOT RUN, and 1 SUPERSEDED**. Sixty-three cases have execution evidence (PASS, FAIL, or PARTIAL). Five cases compare the actual UI with the five `docs/design` wireframes. API-only, metrics, rate-limit, and load-test cases are excluded. Do not infer backend behavior from UI controls or screenshots.
 
+[15 November API follow-up](../test-summary/requirements-follow-up.md) covers slot dates, logistics export, partner authentication, search latency, and metrics.
+
 ## Business rules
 
 | Requirement | UI status | UI cases / evidence | UI coverage gap |
@@ -60,7 +62,7 @@ The UI case sheet contains **115 cases: 26 PASS, 19 FAIL, 18 PARTIAL, 3 SKIPPED,
 | Requirement | UI status | UI cases / evidence | UI coverage gap |
 |---|---|---|---|
 | NF-01 — 30 simultaneous checkouts, 95% within 3 seconds | NOT RUN | [Load plan](../docs/load-test.md) | Requires 30 independent prepared buyer carts |
-| NF-02 — Search p95 within 2 seconds | NOT RUN | CAT-08 | Exact-SKU and partial-name filtering passed in CAT-03. Search latency remains unmeasured. |
+| NF-02 — Search p95 within 2 seconds | PASS (sampled API workload) | [Follow-up results](../test-summary/requirements-follow-up.md) | 40 sequential requests, p95 394.4 ms. Browser rendering and concurrent search latency were not measured. |
 | NF-03 — 50 RPS ceiling, over-limit 429 and metrics | PARTIAL | [API smoke results](../docs/results-report.md) and [load plan](../docs/load-test.md) | The metrics endpoint is covered by the API smoke suite. Over-limit traffic was not generated. |
 | Responsive layout (UI checklist) | PARTIAL | NF-03; [buyer statement at 320px](../evidence/screenshots/NF-03-buyer-statement-320px.png) | The buyer statement had no horizontal overflow at 320px; seller and operator layouts and other breakpoints remain untested. |
 
