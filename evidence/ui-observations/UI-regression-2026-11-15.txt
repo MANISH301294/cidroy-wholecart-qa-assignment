@@ -57,3 +57,10 @@ LOG-04 buyer3 UTF-8 export
 UI action: operator clicked Run export now and downloaded the logistics CSV.
 Output check: decoded as UTF-8; header was order_number,buyer_name,delivery_address,delivery_date,slot_start,slot_end,pieces. The file had one data row, but no Hindi characters / buyer3 display name, so preservation of the buyer3 Unicode name was not exercised. The downloaded row is not committed because it contains demo delivery data.
 Result: SKIPPED; no eligible buyer3 export row was available.
+
+
+SLOT-10 change delivery before shipping
+Input: existing unshipped placed order WC-01077-1, originally scheduled 2026-11-15 14:00–17:00.
+UI result: changed slot to 17:00–20:00; the order detail showed the updated delivery slot.
+Cleanup: changed it back to the original 14:00–17:00 and verified the order detail. No order was placed or canceled.
+Result: PASS.

@@ -44,7 +44,7 @@ SLOT-06,UI,Delivery Slots & Operator Clock,BR-05/BR-06/BR-14/BR-15/BR-23/BR-24,N
 SLOT-07,UI,Delivery Slots & Operator Clock,BR-05/BR-06/BR-14/BR-15/BR-23/BR-24,PARTIAL,,N/A,
 SLOT-08,UI,Delivery Slots & Operator Clock,BR-05/BR-06/BR-14/BR-15/BR-23/BR-24,PASS,,N/A,
 SLOT-09,UI,Delivery Slots & Operator Clock,BR-05/BR-06/BR-14/BR-15/BR-23/BR-24,PASS,,N/A,
-SLOT-10,UI,Delivery Slots & Operator Clock,BR-05/BR-06/BR-14/BR-15/BR-23/BR-24,NOT RUN,,N/A,
+SLOT-10,UI,Delivery Slots & Operator Clock,BR-05/BR-06/BR-14/BR-15/BR-23/BR-24,PASS,,N/A,
 SLOT-11,UI,Delivery Slots & Operator Clock,BR-05/BR-06/BR-14/BR-15/BR-23/BR-24,NOT RUN,,N/A,
 ORD-01,UI,"Orders, Cancellation & Reorder",BR-09–BR-16/BR-21,PASS,,N/A,
 ORD-02,UI,"Orders, Cancellation & Reorder",BR-09–BR-16/BR-21,PASS,,N/A,

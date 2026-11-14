@@ -16,7 +16,7 @@
 - **SUPERSEDED:** An approved release note replaces the original rule.
 - **OUT OF SCOPE:** The requirement requires API/load testing rather than UI testing.
 
-The UI case sheet contains **115 cases: 37 PASS, 22 FAIL, 21 PARTIAL, 5 SKIPPED, 29 NOT RUN, and 1 SUPERSEDED**. Eighty cases have execution evidence (PASS, FAIL, or PARTIAL). Five cases compare the actual UI with the five `docs/design` wireframes. API-only, metrics, rate-limit, and load-test cases are excluded. Do not infer backend behavior from UI controls or screenshots.
+The UI case sheet contains **115 cases: 38 PASS, 22 FAIL, 21 PARTIAL, 5 SKIPPED, 28 NOT RUN, and 1 SUPERSEDED**. Eighty-one cases have execution evidence (PASS, FAIL, or PARTIAL). Five cases compare the actual UI with the five `docs/design` wireframes. API-only, metrics, rate-limit, and load-test cases are excluded. Do not infer backend behavior from UI controls or screenshots.
 
 ## Business rules
 
