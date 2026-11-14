@@ -21,3 +21,26 @@ OPS-02 seller approval workflow
 UI result: operator seller list showed only three sellers, all approved, and exposed no approval controls or pending seller fixture.
 Result: SKIPPED; no eligible test fixture or approval action was available.
 Evidence: [checkout screenshot at exact ₹3,000](../screenshots/CHK-04-exact-3000-fee-waived.jpg).
+
+
+2026-11-15 follow-up: remaining-case checks
+
+AUTH-05 cross-seller order access
+Input: seller2 (FreshFarm Foods); attempted buyer order URL /orders/85 in a fresh tab.
+UI result: unauthenticated direct route redirected to /login. After seller2 login, the app returned to /seller/orders. Seller2's list contained FreshFarm sub-orders only. The target URL did not survive login, so direct access denial to a seller1 order is not proven.
+Result: PARTIAL.
+
+ORD-02 seller order visibility
+Input: existing two-seller buyer order WC-01070, with sub-orders WC-01070-1 (WholeCart Direct) and WC-01070-2 (FreshFarm Foods).
+UI result: buyer history and the two seller order lists showed the corresponding seller sub-orders; seller2's list did not show seller1 sub-orders.
+Result: PASS using existing fixture; no new checkout was submitted.
+
+SLOT-08 operator setting immediate effect
+Input: operator capacity changed from 5 to 1; buyer1 checkout loaded with one case of SKU-0510 Chef's Cookies.
+UI result: at capacity 1 the 14:00–17:00 and 17:00–20:00 same-day slots were disabled as full. Restored capacity to 5; after reloading checkout the same slots were selectable. No order was submitted.
+Cleanup: capacity restored and saved as 5; cart quantity set to 0; cart showed empty.
+Result: PASS.
+
+LOG-05 scheduled hourly export
+UI result: export history listed runs at 2026-11-15 03:27:12 and 04:27:12 (+05:30), each reporting one row; the UI says exports run every hour. Scheduled output contents/schema were not exposed. Clicking Run export now did not create a visible new row during this observation.
+Result: PARTIAL.

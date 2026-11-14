@@ -16,7 +16,7 @@
 - **SUPERSEDED:** An approved release note replaces the original rule.
 - **OUT OF SCOPE:** The requirement requires API/load testing rather than UI testing.
 
-The UI case sheet contains **115 cases: 34 PASS, 22 FAIL, 19 PARTIAL, 4 SKIPPED, 35 NOT RUN, and 1 SUPERSEDED**. Seventy-five cases have execution evidence (PASS, FAIL, or PARTIAL). Five cases compare the actual UI with the five `docs/design` wireframes. API-only, metrics, rate-limit, and load-test cases are excluded. Do not infer backend behavior from UI controls or screenshots.
+The UI case sheet contains **115 cases: 36 PASS, 22 FAIL, 21 PARTIAL, 4 SKIPPED, 31 NOT RUN, and 1 SUPERSEDED**. Seventy-nine cases have execution evidence (PASS, FAIL, or PARTIAL). Five cases compare the actual UI with the five `docs/design` wireframes. API-only, metrics, rate-limit, and load-test cases are excluded. Do not infer backend behavior from UI controls or screenshots.
 
 ## Business rules
 
@@ -44,7 +44,7 @@ The UI case sheet contains **115 cases: 34 PASS, 22 FAIL, 19 PARTIAL, 4 SKIPPED,
 | BR-20 — Monthly delivered-order statement less approved refunds | FAIL | INV-06 through INV-09; [November statement](../evidence/screenshots/INV-06-statement-includes-canceled-orders.png) | November statement included canceled orders and their amounts; refund deduction and month-boundary behavior remain unverified |
 | BR-21 — Buyers/sellers see only their own records | FAIL | INV-10 | Buyer1 opened another buyer’s invoice by direct URL. See [WC-021](../defect-reports/triage/INV-10.md). |
 | BR-22 — Catalogue prices exclude tax; checkout shows per-seller tax/fee | PARTIAL | CAT-04/CAT-06, CART-10, CHK-02/CHK-03; [two-seller checkout](../evidence/screenshots/CHK-02-two-seller-total-above-min-one-below.png) | The two-seller summary showed net, tax, delivery, and totals; it incorrectly waived fee after OPS-14 expiry. Catalogue product detail price-before-tax behavior was not independently checked. CAT-06 found two distinct seller products sharing a SKU; CART-10 showed distinct piece/case cart lines. |
-| BR-23 — Operator settings take effect immediately | PARTIAL | OPS-01/SLOT-08; settings screenshot | Capacity changed from 5 to 6, persisted after reopening, and was restored to 5; immediate buyer-side effect was not checked |
+| BR-23 — Operator settings take effect immediately | PASS | OPS-01/SLOT-08; UI follow-up log | Capacity changed from 5 to 1 and disabled two same-day slots; restoring 5 made them selectable. Original value restored; no order submitted. |
 | BR-24 — Fixed store clock available; real time is default | PASS | SLOT-03 through SLOT-05, SLOT-09; settings screenshot | Fixed times exercised same-day slot behavior, then real time was restored and saved |
 
 ## Integration requirements visible from UI
@@ -52,7 +52,7 @@ The UI case sheet contains **115 cases: 34 PASS, 22 FAIL, 19 PARTIAL, 4 SKIPPED,
 | Requirement | UI status | UI cases / evidence | UI coverage gap |
 |---|---|---|---|
 | IF-01 — Seller CSV import and row-level reporting | PARTIAL; CSV-04/05 FAIL | CSV-01 through CSV-07; [seller products screenshot](../evidence/screenshots/UI-SELLER-PRODUCTS-STOCK-AND-CSV.png); [CSV import run evidence](../evidence/api-logs/CSV-import-ui-observation.txt); WC-019 | CSV-01/02/03/06/07 passed; CSV-04/05 failed due misleading import counts and missing row-level errors |
-| IF-02 — Logistics export schema and eligible rows | PARTIAL | LOG-01 through LOG-05; [downloaded CSV](../evidence/downloads/IF02-logistics-export-header-only.csv) | UI-triggered export header decoded as UTF-8 and matched required order; no rows existed to verify status filtering, pieces, or hourly behavior |
+| IF-02 — Logistics export schema and eligible rows | PARTIAL | LOG-01 through LOG-05; [downloaded CSV](../evidence/downloads/IF02-logistics-export-header-only.csv); [hourly run observation](../evidence/ui-observations/UI-regression-2026-11-15.txt) | UI-triggered export header decoded as UTF-8 and matched required order; hourly run history was visible, but scheduled output schema and eligibility remain unverified |
 | IF-03 — Partner API pagination and offer update | OUT OF SCOPE | API-01 through API-05 excluded from the UI sheet | Partner API is not a browser UI workflow |
 
 ## Non-functional requirements
