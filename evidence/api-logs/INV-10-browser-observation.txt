@@ -1,0 +1,6 @@
+Browser observation, assigned WholeCart demo, 15 November 2026
+Signed-in navigation identity: Spice Route Kitchen (buyer1)
+Requested browser route: /invoices/5
+Rendered heading: Tax invoice INV-00005
+Rendered buyer: Café Dosa Corner
+Rendered order: WC-01005-1

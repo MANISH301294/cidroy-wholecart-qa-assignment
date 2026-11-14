@@ -10,13 +10,13 @@
 The UI case sheet contains **115 cases**:
 
 - 26 PASS
-- 19 FAIL
+- 20 FAIL
 - 18 PARTIAL
 - 3 SKIPPED
-- 48 NOT RUN
+- 47 NOT RUN
 - 1 SUPERSEDED by CR-07
 
-Sixty-three cases have execution evidence (PASS, FAIL, or PARTIAL). Five additional cases compare the live cart, checkout, buyer order history, invoice, and seller order list with the `docs/design` wireframes. Skipped and not-run cases are not passes. API-only and load-testing results are excluded from this UI report.
+Sixty-four cases have execution evidence (PASS, FAIL, or PARTIAL). Five additional cases compare the live cart, checkout, buyer order history, invoice, and seller order list with the `docs/design` wireframes. Skipped and not-run cases are not passes. API-only and load-testing results are excluded from this UI report.
 
 ## Reproduced UI defects
 

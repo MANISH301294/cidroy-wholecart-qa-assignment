@@ -16,7 +16,7 @@
 - **SUPERSEDED:** An approved release note replaces the original rule.
 - **OUT OF SCOPE:** The requirement requires API/load testing rather than UI testing.
 
-The UI case sheet contains **115 cases: 26 PASS, 19 FAIL, 18 PARTIAL, 3 SKIPPED, 48 NOT RUN, and 1 SUPERSEDED**. Sixty-three cases have execution evidence (PASS, FAIL, or PARTIAL). Five cases compare the actual UI with the five `docs/design` wireframes. API-only, metrics, rate-limit, and load-test cases are excluded. Do not infer backend behavior from UI controls or screenshots.
+The UI case sheet contains **115 cases: 26 PASS, 20 FAIL, 18 PARTIAL, 3 SKIPPED, 47 NOT RUN, and 1 SUPERSEDED**. Sixty-four cases have execution evidence (PASS, FAIL, or PARTIAL). Five cases compare the actual UI with the five `docs/design` wireframes. API-only, metrics, rate-limit, and load-test cases are excluded. Do not infer backend behavior from UI controls or screenshots.
 
 [15 November API follow-up](../test-summary/requirements-follow-up.md) covers slot dates, logistics export, partner authentication, search latency, and metrics.
 
@@ -44,7 +44,7 @@ The UI case sheet contains **115 cases: 26 PASS, 19 FAIL, 18 PARTIAL, 3 SKIPPED,
 | BR-18 — Tax-inclusive refunds; exchange returns no money; seller decision | NOT RUN | REF-01 through REF-10 | No refund/exchange UI approval, rejection, replacement, or payment flow verified |
 | BR-19 — Invoice identity, lines, taxes, fee, total | FAIL | INV-02 through INV-05 and INV-CR09-STATE; [defect log](../defect-reports/defect-log.md) | Arithmetic and total reconciliation passed for two invoices; B2B, place of supply, seller GSTIN, and separate fee line are missing |
 | BR-20 — Monthly delivered-order statement less approved refunds | FAIL | INV-06 through INV-09; [November statement](../evidence/screenshots/INV-06-statement-includes-canceled-orders.png) | November statement included canceled orders and their amounts; refund deduction and month-boundary behavior remain unverified |
-| BR-21 — Buyers/sellers see only their own records | PARTIAL | AUTH-01, AUTH-04 through AUTH-06, ORD-02, INV-10 | Buyer/seller/operator logins were observed for three roles; cross-account order/invoice/statement visibility was not tested through UI |
+| BR-21 — Buyers/sellers see only their own records | FAIL | INV-10 | Buyer1 opened another buyer’s invoice by direct URL. See [WC-021](../defect-reports/triage/INV-10.md). |
 | BR-22 — Catalogue prices exclude tax; checkout shows per-seller tax/fee | PARTIAL | CAT-04, CHK-02/CHK-03; [two-seller checkout](../evidence/screenshots/CHK-02-two-seller-total-above-min-one-below.png) | The two-seller summary showed net, tax, delivery, and totals; it incorrectly waived fee after OPS-14 expiry. Catalogue product detail price-before-tax behavior was not independently checked. |
 | BR-23 — Operator settings take effect immediately | PARTIAL | OPS-01/SLOT-08; settings screenshot | Current values were visible; changing a setting and verifying the immediate UI effect was not done |
 | BR-24 — Fixed store clock available; real time is default | PASS | SLOT-03 through SLOT-05, SLOT-09; settings screenshot | Fixed times exercised same-day slot behavior, then real time was restored and saved |

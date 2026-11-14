@@ -163,3 +163,7 @@
 ## Reproduction safety
 
 Do not use any state-changing scenario against production. Most lifecycle and order mutation cases in the UI sheet are marked NOT RUN.
+
+## WC-021 — Buyer can open another buyer’s invoice
+
+Buyer1 could open a foreign invoice at `/invoices/5`. The page rendered details for Café Dosa Corner. Severity S1 Blocker under BR-21. [INV-10 reproduction and evidence](triage/INV-10.md)
