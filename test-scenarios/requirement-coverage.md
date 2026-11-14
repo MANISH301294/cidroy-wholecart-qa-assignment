@@ -16,7 +16,7 @@
 - **SUPERSEDED:** An approved release note replaces the original rule.
 - **OUT OF SCOPE:** The requirement requires API/load testing rather than UI testing.
 
-The UI case sheet contains **115 cases: 38 PASS, 23 FAIL, 21 PARTIAL, 5 SKIPPED, 27 NOT RUN, and 1 SUPERSEDED**. Eighty-two cases have execution evidence (PASS, FAIL, or PARTIAL). Five cases compare the actual UI with the five `docs/design` wireframes. API-only, metrics, rate-limit, and load-test cases are excluded. Do not infer backend behavior from UI controls or screenshots.
+The UI case sheet contains **115 cases: 40 PASS, 23 FAIL, 21 PARTIAL, 5 SKIPPED, 25 NOT RUN, and 1 SUPERSEDED**. Eighty-four cases have execution evidence (PASS, FAIL, or PARTIAL). Five cases compare the actual UI with the five `docs/design` wireframes. API-only, metrics, rate-limit, and load-test cases are excluded. Do not infer backend behavior from UI controls or screenshots.
 
 ## Business rules
 
@@ -35,11 +35,11 @@ The UI case sheet contains **115 cases: 38 PASS, 23 FAIL, 21 PARTIAL, 5 SKIPPED,
 | BR-11 — Buyer cancellation through 5:00 before shipment; retain order and return stock | PARTIAL | ORD-04, ORD-05 through ORD-11; [stock restored after cancellation](../evidence/screenshots/ORD-11-stock-restored-after-cancel.png) | Stock was visibly restored after one cancellation; timing boundaries and shipped-order behavior were not verified in UI |
 | BR-12 — Seller cancellation immediately visible to buyer | NOT RUN | ORD-09 | No UI seller-cancel-to-buyer observation |
 | BR-13 — Valid lifecycle transitions and cancellation before shipment | PARTIAL | ORD-03/ORD-04; seller order list | A placed seller row exposed Accept/Cancel; cancelled-order details still showed invalid actions; full lifecycle not run |
-| BR-14 — Redelivery after failed delivery with a valid slot | PARTIAL | RED-01 through RED-06; cancelled-order screenshot | Redelivery action appeared on a cancelled order, but no failed-delivery/redelivery flow was executed |
+| BR-14 — Redelivery after failed delivery with a valid slot | PARTIAL | RED-01 through RED-06; [invalid-state check](../evidence/ui-observations/UI-regression-2026-11-15.txt) | RED-06 rejected a request on a cancelled order; failed-delivery and valid redelivery flow remain untested |
 | BR-15 — Slot change until shipment | PARTIAL | SLOT-10/SLOT-11; cancelled-order screenshot | Change slot was visible on a cancelled order; valid/invalid state transitions were not submitted |
 | BR-16 — Reorder adds every past-order line on every use | PASS | ORD-12; [repeat reorder](../evidence/screenshots/ORD-12-repeat-reorder-doubles-quantity.png) | Two reorder actions for a 16-piece line resulted in 32 pieces; other historical multi-line cases were not tested. |
 | BR-17 — Delivered-only refunds/exchanges and per-line quantity cap | PARTIAL | REF-01 through REF-10; [excess quantity rejected](../evidence/screenshots/REF-03-excess-quantity-rejected.png) | The UI rejected refund quantity 3 for a 2-piece order line; valid refund/exchange requests and seller decisions were not exercised |
-| BR-18 — Tax-inclusive refunds; exchange returns no money; seller decision | NOT RUN | REF-01 through REF-10 | No refund/exchange UI approval, rejection, replacement, or payment flow verified |
+| BR-18 — Tax-inclusive refunds; exchange returns no money; seller decision | PARTIAL | REF-01 through REF-10; [pre-delivery check](../evidence/ui-observations/UI-regression-2026-11-15.txt) | REF-05 correctly rejects refund before delivery; refund/exchange approval and payment effects remain unverified |
 | BR-19 — Invoice identity, lines, taxes, fee, total | FAIL | INV-02 through INV-05 and INV-CR09-STATE; [defect log](../defect-reports/defect-log.md) | Arithmetic and total reconciliation passed for two invoices; B2B, Goa (30), seller GSTIN, and separate fee line are missing |
 | BR-20 — Monthly delivered-order statement less approved refunds | FAIL | INV-06 through INV-09; [November statement](../evidence/screenshots/INV-06-statement-includes-canceled-orders.png) | November statement included canceled orders and their amounts; refund deduction and month-boundary behavior remain unverified |
 | BR-21 — Buyers/sellers see only their own records | FAIL | INV-10; AUTH-05 PARTIAL | Buyer1 opened another buyer’s invoice by direct URL. See [WC-021](../defect-reports/triage/INV-10.md). |

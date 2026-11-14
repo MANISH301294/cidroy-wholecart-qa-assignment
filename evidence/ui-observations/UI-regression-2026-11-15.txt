@@ -71,3 +71,15 @@ Input: delivered order WC-01081-1 contained 25 cases of Chef's Cardamom (case si
 UI result: Reorder added 25 cases to cart. Checkout showed no stock warning and kept Place order enabled. No order was submitted; this is linked to existing stock defect WC-012 (CART-09), not logged as a duplicate.
 Cleanup: cart quantity set to 0; cart verified empty.
 Result: FAIL; see [WC-012 triage](../../defect-reports/triage/CART-09.md).
+
+
+RED-06 invalid redelivery request
+Input: cancelled order WC-01078-1, no failed-delivery event.
+UI result: Request redelivery was rejected with “Redelivery is only available after a failed delivery”; order remained cancelled.
+Result: PASS; no order-state mutation.
+
+
+REF-05 refund before delivery
+Input: placed order WC-01077-1, one-case partial refund request before delivery.
+UI result: request was rejected with “Refunds and exchanges are only available for delivered orders”; order remained placed and no refund request was created.
+Result: PASS; no order-state mutation.

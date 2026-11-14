@@ -9,14 +9,14 @@
 
 The UI case sheet contains **115 cases**:
 
-- 38 PASS
+- 40 PASS
 - 23 FAIL
 - 21 PARTIAL
 - 5 SKIPPED
-- 27 NOT RUN
+- 25 NOT RUN
 - 1 SUPERSEDED by CR-07
 
-Eighty-two cases have execution evidence (PASS, FAIL, or PARTIAL). Five additional cases compare the live cart, checkout, buyer order history, invoice, and seller order list with the `docs/design` wireframes. Skipped and not-run cases are not passes. API-only and load-testing results are excluded from this UI report.
+Eighty-four cases have execution evidence (PASS, FAIL, or PARTIAL). Five additional cases compare the live cart, checkout, buyer order history, invoice, and seller order list with the `docs/design` wireframes. Skipped and not-run cases are not passes. API-only and load-testing results are excluded from this UI report.
 
 ## Reproduced UI defects
 
@@ -77,6 +77,6 @@ The earlier Catalogue Search defect (WC-009) was not reproduced in the latest ru
 
 ## Gaps and exclusions
 
-Multi-rate invoice aggregation and logistics row filtering were skipped because suitable data rows were unavailable. LOG-04 was skipped because no eligible buyer3 row was present in the export. Most workflow scenarios remain NOT RUN, including slot-capacity-five boundary, cancellation-timing, seller status transitions, redelivery, refund/exchange approval, seller approval, and inquiry ownership checks. SLOT-08, SLOT-10, and SEL-01 passed with cleanup; ORD-13 reproduced WC-012 on a negative-stock reorder and the cart was cleared; AUTH-05 remains PARTIAL because the target order URL did not survive login. LOG-05 remains PARTIAL because scheduled output contents were not exposed. CSV-01 through CSV-07 were run; CSV-04/05 failed and the other CSV cases passed. The two WC-01076 sub-orders used for checkout observations are both canceled.
+Multi-rate invoice aggregation and logistics row filtering were skipped because suitable data rows were unavailable. LOG-04 was skipped because no eligible buyer3 row was present in the export. Most workflow scenarios remain NOT RUN, including slot-capacity-five boundary, cancellation-timing, seller status transitions, redelivery, refund/exchange approval, seller approval, and inquiry ownership checks. SLOT-08, SLOT-10, SEL-01, REF-05, and RED-06 passed or rejected correctly with no persistent state change; ORD-13 reproduced WC-012 on a negative-stock reorder and the cart was cleared; AUTH-05 remains PARTIAL because the target order URL did not survive login. LOG-05 remains PARTIAL because scheduled output contents were not exposed. CSV-01 through CSV-07 were run; CSV-04/05 failed and the other CSV cases passed. The two WC-01076 sub-orders used for checkout observations are both canceled.
 
 API partner cases, the metrics endpoint, rate limiting, and the 30-buyer load case are outside this UI-only scope. The [requirement coverage matrix](../test-scenarios/requirement-coverage.md) records each requirement's status.
