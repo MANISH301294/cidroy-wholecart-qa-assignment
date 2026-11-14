@@ -13,11 +13,13 @@
 
 - **S1 Blocker · 4** — WC-004, WC-005, WC-007, WC-012.
 - **S2 Critical · 2** — WC-017, WC-018.
-- **S3 Major · 6** — WC-006, WC-011, WC-013, WC-014, WC-015, WC-016.
+- **S3 Major · 8** — WC-006, WC-011, WC-013, WC-014, WC-015, WC-016, WC-019, WC-020.
 - **S4 Minor · 5** — WC-001, WC-002, WC-003, WC-008, WC-010.
 
-The counts cover 17 distinct open findings. The UI and API observations for WC-007 count as one defect.
+The counts cover 19 distinct open findings. The UI and API observations for WC-007 count as one defect.
 
 ## Open risks
 
 Slot capacity, seller lifecycle, export row selection, refund and exchange approval, partner authorization coverage and multi-rate invoice aggregation remain incomplete. The 30-buyer performance goal is unverified because the required fixtures were unavailable.
+
+The [integration follow-up](integration-nonfunctional-run.md) records CSV import and delivery slot export failures.

@@ -87,13 +87,13 @@ INV-09,UI,Invoices & Monthly Statements,BR-07/BR-08/BR-19/BR-20/BR-21/CR-09,PART
 INV-10,UI,Invoices & Monthly Statements,BR-07/BR-08/BR-19/BR-20/BR-21/CR-09,NOT RUN,,N/A,
 SEL-01,UI,Seller Products & CSV Import (UI),BR-21,NOT RUN,,N/A,
 SEL-02,UI,Seller Products & CSV Import (UI),BR-21,NOT RUN,,N/A,
-CSV-01,UI,Seller Products & CSV Import (UI),IF-01,NOT RUN,,N/A,
-CSV-02,UI,Seller Products & CSV Import (UI),IF-01,NOT RUN,,N/A,
-CSV-03,UI,Seller Products & CSV Import (UI),IF-01,NOT RUN,,N/A,
-CSV-04,UI,Seller Products & CSV Import (UI),IF-01,NOT RUN,,N/A,
-CSV-05,UI,Seller Products & CSV Import (UI),IF-01,NOT RUN,,N/A,
-CSV-06,UI,Seller Products & CSV Import (UI),IF-01,NOT RUN,,N/A,
-CSV-07,UI,Seller Products & CSV Import (UI),IF-01,NOT RUN,,N/A,
+CSV-01,API,Seller Products & CSV Import,IF-01,PASS,,N/A,
+CSV-02,API,Seller Products & CSV Import,IF-01,PASS,,N/A,
+CSV-03,API,Seller Products & CSV Import,IF-01,PASS,,N/A,
+CSV-04,API,Seller Products & CSV Import,IF-01,FAIL,WC-019,S3 Major,../defect-reports/triage/CSV-04.md
+CSV-05,API,Seller Products & CSV Import,IF-01,FAIL,WC-019,S3 Major,../defect-reports/triage/CSV-05.md
+CSV-06,API,Seller Products & CSV Import,IF-01,PASS,,N/A,
+CSV-07,API,Seller Products & CSV Import,IF-01,PASS,,N/A,
 OPS-01,UI,"Operator, Logistics & Non-functional",BR-23/Operator UI,NOT RUN,,N/A,
 OPS-02,UI,"Operator, Logistics & Non-functional",BR-23/Operator UI,NOT RUN,,N/A,
 LOG-01,UI,"Operator, Logistics & Non-functional",IF-02/Operator UI,PASS,,N/A,
@@ -119,3 +119,4 @@ API-DUPLICATE,API,Focused check,BR-10,FAIL,WC-005,S1 Blocker,../defect-reports/t
 API-HISTORY,API,Focused check,BR-21,FAIL,WC-006,S3 Major,../defect-reports/triage/API-HISTORY.md
 API-INVOICE,API,Focused check,CR-09,FAIL,WC-007,S1 Blocker,../defect-reports/triage/API-INVOICE.md
 UI-FAVICON,UI,Focused check,UI quality,FAIL,WC-001,S4 Minor,../defect-reports/triage/UI-FAVICON.md
+LOG-SLOT,API,Logistics export,IF-02,FAIL,WC-020,S3 Major,../defect-reports/triage/LOG-SLOT.md

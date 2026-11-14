@@ -1,0 +1,33 @@
+buyer inventory 200 3
+seller1 products 200 50 ['id', 'seller_id', 'sku', 'name', 'category', 'piece_price', 'case_size', 'case_price', 'tax_rate', 'stock', 'active']
+seller2 products 200 50 ['id', 'seller_id', 'sku', 'name', 'category', 'piece_price', 'case_size', 'case_price', 'tax_rate', 'stock', 'active']
+CSV-01 200 {"imported":1,"errors":[]}
+CSV-02 200 {"imported":1,"errors":[]}
+CSV-03 200 {"imported":1,"errors":[]}
+CSV-04 200 {"imported":2,"errors":[]}
+CSV-05 200 {"imported":4,"errors":[]}
+CSV-06 200 {"imported":1,"errors":[]}
+CSV-07 missing column 400 {"error":"CSV must have columns: sku, name, category, case_size, piece_price, case_price, tax_rate, stock"}
+CSV-07 reordered columns 200 {"imported":1,"errors":[]}
+readback seller1 200 []
+readback seller2 200 []
+latest logistics 200 data rows 0
+seller1 persisted {'id': 577, 'sku': 'QA-CSV-A8FDC0A2', 'name': 'QA Café & चावल', 'piece_price': '11.00', 'case_price': '22.00', 'tax_rate': 5, 'case_size': 2, 'stock': 0, 'active': 1}
+deactivate 577 200
+seller1 pages checked 8
+seller2 persisted {'id': 578, 'sku': 'QA-CSV-A8FDC0A2', 'name': 'QA test (inactive)', 'piece_price': '12.00', 'case_price': '24.00', 'tax_rate': 5, 'case_size': 2, 'stock': 0, 'active': 1}
+deactivate 578 200
+seller2 pages checked 5
+seller API credential fields exposed False
+invalid partner key status 401
+manual export 200 order_number,buyer_name,delivery_address,delivery_date,slot_start,slot_end,pieces
+
+latest export 200 header ['order_number', 'buyer_name', 'delivery_address', 'delivery_date', 'slot_start', 'slot_end', 'pieces'] data rows 0
+rate sample requests 120 peak starts per rolling second 36 statuses {200: 120}
+cart empty 200 True
+placed WC-01082-1
+export 200 rows 0 fixture [] utf8 True
+accepted WC-01082-1
+export 200 rows 1 fixture [{'order_number': 'WC-01082-1', 'pieces': '24', 'delivery_date': '2026-11-16', 'slot_start': '11:00', 'slot_end': '08:00'}] utf8 True
+fixture cancelled 200
+export 200 rows 0 fixture [] utf8 True

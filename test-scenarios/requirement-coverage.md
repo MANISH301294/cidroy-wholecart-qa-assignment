@@ -51,6 +51,8 @@ The UI case sheet contains **115 cases: 26 PASS, 19 FAIL, 18 PARTIAL, 3 SKIPPED,
 
 ## Integration requirements visible from UI
 
+The [API execution follow-up](../test-summary/integration-nonfunctional-run.md) records later API results for CSV import, logistics export, and partner authentication.
+
 | Requirement | UI status | UI cases / evidence | UI coverage gap |
 |---|---|---|---|
 | IF-01 — Seller CSV import and row-level reporting | NOT RUN | CSV-01 through CSV-07; [seller products screenshot](../evidence/screenshots/UI-SELLER-PRODUCTS-STOCK-AND-CSV.png) | Import controls were observed, but no file was uploaded |

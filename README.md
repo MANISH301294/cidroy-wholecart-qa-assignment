@@ -32,3 +32,5 @@ WC_BASE_URL="$WHOLECART_DEMO_URL" WC_TEST_PASSWORD="$WHOLECART_TEST_PASSWORD" np
 ```
 
 Set the two shell variables from the assignment credentials before running. Account names and per-account password overrides are defined in [test fixtures](tests/support/api.ts). The default run exercises login, role access, catalogue and API validation. Fixture-dependent checks skip when their required variables are absent. See [API test specification](docs/test-cases.md) and [defect reproduction instructions](docs/defect-log.md) for the opt-in stock race and other mutation checks. The GitHub Actions workflow is manual and reads the target from `WC_BASE_URL` and the password from a repository secret.
+
+[Integration and non-functional execution results](test-summary/integration-nonfunctional-run.md)

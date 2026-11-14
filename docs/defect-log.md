@@ -41,3 +41,8 @@ The test is expected to exit non-zero while WC-004, WC-005, or WC-006 reproduce.
 - **S4 Minor:** limited UI, content, or low-impact behavior issue.
 
 For each finding attach role/account (never credentials), UTC timestamp and store-clock time, request/response or screenshot, test data/order numbers, environment, exact steps, expected/actual result, severity rationale and reproducibility.
+
+## Integration findings
+
+- **WC-019 · S3 Major** · CSV import reports malformed rows as imported and omits row errors. [Mixed file](../defect-reports/triage/CSV-04.md) · [Invalid fields](../defect-reports/triage/CSV-05.md)
+- **WC-020 · S3 Major** · Logistics CSV reverses the accepted order’s delivery slot times. [Reproduction and evidence](../defect-reports/triage/LOG-SLOT.md)
