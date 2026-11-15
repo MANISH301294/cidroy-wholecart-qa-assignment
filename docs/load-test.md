@@ -36,6 +36,14 @@ WC_ENABLE_LOAD_TEST=1 npm run load:checkout
 
 Record the output, environment/build, store clock, fixture IDs, time and resulting order numbers (from API response/logs). A p95 over 3000 ms or any non-2xx checkout fails this check. Also inspect metrics for errors, rate-limit events, and resource saturation. Protect the fixture file and output; remove credentials from evidence before sharing.
 
+For a non-mutating rate sample of the monitoring endpoint, run:
+
+```sh
+WC_ENABLE_METRICS_SAMPLE=1 node scripts/load-safe-metrics.mjs
+```
+
+This sends 135 `/api/metrics` requests with at least 20 ms between request starts, keeping generated client traffic at or below 50 requests in any rolling second. It records client latency, observed rolling request starts, statuses, and `/api/metrics` snapshots before and after. It refuses to run without the explicit environment flag. Set `WC_BASE_URL` only when targeting another approved QA copy.
+
 ## Known limitation
 
 Only three buyer accounts are documented in the design. Create/approve 30 dedicated accounts before this test; reusing the three accounts would invalidate independence and could race on shared carts.
@@ -47,6 +55,6 @@ Only three buyer accounts are documented in the design. Create/approve 30 dedica
 **Related non-functional measurements (15 November 2026; not a substitute for checkout load):**
 
 - NF-02 search sample: 40 sequential catalogue requests, with a 100 ms pause after each response. All returned HTTP 200; p95 was 394.4 ms and maximum was 410.1 ms. This is a single-buyer sequential sample, not concurrent-load browser latency. See [search measurements](requirements-follow-up.md) and [raw samples](../evidence/api-logs/requirements-follow-up-2026-11-15.txt).
-- NF-03 metrics/rate sample: `/api/metrics` returned HTTP 200 with request, 5xx error, p50/p95 latency, in-flight order, and version fields. Across 120 metrics requests, all returned HTTP 200 and peak observed client request starts were 36 in a rolling second, below the 50 RPS ceiling. The exact 50 RPS boundary and behavior above it were not measured. See [integration and non-functional run](../test-summary/integration-nonfunctional-run.md).
+- NF-03 safe rate sample: 135 scheduled `GET /api/metrics` requests, spaced at least 20 ms apart, produced a peak of 49 client starts in a rolling second. All returned HTTP 200; client p95 was 29.5 ms and maximum was 58.2 ms. `/api/metrics` reported 0 5xx errors and 0 in-flight orders before and after; its reported p95 was 1.8 ms after the sample. We did not send above 50 RPS because the assignment caps generated traffic at 50; the expected HTTP 429 response remains unverified. See [captured metrics run](../evidence/api-logs/NF-03-metrics-safe-rate-2026-11-15.json).
 
 **Conclusion:** The available search sample met its p95 target and the recorded metrics sampling stayed under the assignment's rate cap, but the 30-buyer checkout performance requirement has no result. Keep NF-01 open until 30 independent buyers with prepared carts are available and the guarded checkout script records response latencies plus `/api/metrics` snapshots.

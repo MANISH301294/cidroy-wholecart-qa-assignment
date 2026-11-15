@@ -1,0 +1,34 @@
+{
+  "testDate": "2026-11-15",
+  "environment": "Assigned WholeCart demo, version 1.0",
+  "endpoint": "/api/metrics",
+  "requestCount": 135,
+  "pacing": "Request starts spaced by at least 20 ms; no more than 50 requests/second",
+  "peakClientStartsPerRollingSecond": 49,
+  "responseStatuses": {
+    "200": 135
+  },
+  "clientLatencyMs": {
+    "p95": 29.5,
+    "max": 58.2
+  },
+  "metricsBefore": {
+    "window_seconds": 60,
+    "requests": 0,
+    "errors_5xx": 0,
+    "p50_ms": null,
+    "p95_ms": null,
+    "orders_in_flight": 0,
+    "version": "1.0"
+  },
+  "metricsAfter": {
+    "window_seconds": 60,
+    "requests": 136,
+    "errors_5xx": 0,
+    "p50_ms": 1.2,
+    "p95_ms": 1.8,
+    "orders_in_flight": 0,
+    "version": "1.0"
+  },
+  "above50RpsProbe": "Not run; assignment limits generated traffic to 50 requests/second."
+}

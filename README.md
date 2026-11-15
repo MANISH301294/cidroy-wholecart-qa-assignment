@@ -13,7 +13,7 @@ Testing was recorded on 14–15 November 2026. Of 115 UI cases, 40 passed, 23 fa
 - [UI defect log](defect-reports/defect-log.md), [API and focused defect log](docs/defect-log.md), and [individual failed-case triage](defect-reports/triage/)
 - [Release report](test-summary/release-report.md), [UI execution summary](test-summary/execution-summary.md), and [recorded API results](docs/results-report.md)
 - [Repeatable regression suite and test-to-case mapping](docs/regression-suite.md)
-- [Load test plan and runner](docs/load-test.md) · Run pending 30 independent buyer fixtures
+- [Load test plan and runners](docs/load-test.md) · Safe metrics-rate sample recorded; 30-buyer checkout run pending dedicated fixtures
 - [Five-minute voice walkthrough outline](evidence/recordings/README.md) · Recording pending
 - [AI usage and verification](ai-usage/sessions.md)
 

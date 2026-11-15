@@ -20,6 +20,6 @@ The counts cover 20 distinct open findings. The UI and API observations for WC-0
 
 ## Open risks
 
-Slot capacity, seller lifecycle, export row selection, refund and exchange approval, partner authorization coverage and multi-rate invoice aggregation remain incomplete. The 30-buyer performance goal is unverified because the required fixtures were unavailable.
+Slot capacity, seller lifecycle, export row selection, refund and exchange approval, partner authorization coverage and multi-rate invoice aggregation remain incomplete. The 30-buyer performance goal is unverified because the required fixtures were unavailable. The above-50 RPS HTTP 429 behavior also remains unverified because generated traffic must stay within the assignment's 50 RPS limit.
 
 The [integration follow-up](integration-nonfunctional-run.md) records the CSV import and delivery slot export failures. The repeatable UI/API regression subset runs with `npm run test:regression`; 25 manual UI cases remain NOT RUN.

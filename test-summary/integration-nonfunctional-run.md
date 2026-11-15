@@ -10,4 +10,4 @@
 - **IF-03 · Partial.** Partner orders returned HTTP 401 with a missing or invalid key. Authenticated pagination and offer updates require a valid seller key.
 - **NF-01 · Blocked.** The operator API listed three buyers. The workload requires 30 distinct buyers with prepared carts.
 - **NF-02 · Pass for the sampled API workload.** All 40 sequential search calls succeeded, with p95 394.4 ms. Browser p95 remains unmeasured.
-- **NF-03 · Partial.** All 120 metrics requests returned HTTP 200. Peak measured client starts were 36 per rolling second. The exact 50 RPS boundary and the response above it remain unverified.
+- **NF-03 · Partial.** A 135-request `/api/metrics` sample returned HTTP 200 for every call, with a measured peak of 49 client starts per rolling second, p95 29.5 ms and max 58.2 ms. The metrics snapshots reported zero 5xx errors and zero in-flight orders. The above-50 RPS HTTP 429 behavior remains unverified; generated load stayed below the 50 RPS cap. [Captured run](../evidence/api-logs/NF-03-metrics-safe-rate-2026-11-15.json).
