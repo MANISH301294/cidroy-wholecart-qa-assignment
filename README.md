@@ -14,7 +14,7 @@ Testing was recorded on 14–15 November 2026. Of 115 UI cases, 40 passed, 23 fa
 - [Release report](test-summary/release-report.md), [UI execution summary](test-summary/execution-summary.md), and [recorded API results](docs/results-report.md)
 - [Repeatable regression suite and test-to-case mapping](docs/regression-suite.md)
 - [Load test plan and runners](docs/load-test.md) · Safe metrics-rate sample recorded; 30-buyer checkout run pending dedicated fixtures
-- [Five-minute voice walkthrough outline](evidence/recordings/README.md) · Recording pending
+- [Voice walkthrough and recording link](evidence/recordings/README.md) · Drive recording is 9:58 (assignment target: five minutes)
 - [AI usage and verification](ai-usage/sessions.md)
 
 ## Run API and UI regression
