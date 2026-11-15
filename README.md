@@ -2,7 +2,7 @@
 
 **Release recommendation · Hold.** Checkout can oversell inventory and create duplicate orders. The buyer UI accepted a seller subtotal below the approved minimum, invoices omit required supply information, and CSV import reports invalid rows as successful imports.
 
-Testing was recorded on 14–15 November 2026. Of 115 UI cases, 34 passed, 22 failed, 19 were partial, 4 were skipped, 35 remain not run, and 1 was superseded. The release report records regression results and environment limitations.
+Testing was recorded on 14–15 November 2026. Of 115 UI cases, 40 passed, 23 failed, 21 were partial, 5 were skipped, 25 remain not run, and 1 was superseded. The release report records regression results and environment limitations.
 
 ## Submission
 
@@ -26,14 +26,16 @@ npm ci
 npx playwright install chromium
 ```
 
-Run the regression set with the approved demo URL and test-fixture password supplied separately:
+Run the API and UI regression set against the assigned demo with one command:
 
 ```sh
-WC_BASE_URL="$WHOLECART_DEMO_URL" WC_TEST_PASSWORD="$WHOLECART_TEST_PASSWORD" npm run test:regression
+WC_TEST_PASSWORD="$WHOLECART_TEST_PASSWORD" npm run test:regression
 ```
+
+Set `WHOLECART_TEST_PASSWORD` in your shell from the approved demo credentials; do not commit credentials. Both API and UI tests default to the assigned WholeCart demo URL. For another approved QA copy, set `WC_BASE_URL` before invoking the same command. Role-specific usernames or passwords can be overridden with the `WC_BUYER1`, `WC_SELLER1`, `WC_OPERATOR` and corresponding `*_PASSWORD` variables.
 
 The default command covers API authentication/role validation and UI login plus CSV-01 through CSV-07, including CAT-06. CSV-04/05 currently fail under WC-019. Fixture-dependent API checks skip when their required variables are absent. The dedicated CSV regression SKUs persist in the assigned demo because the seller UI has no product delete control. See [regression suite](docs/regression-suite.md) before targeting another environment.
 
-The full `npm test` command also includes opt-in mutation and concurrency checks. See [API test specification](docs/test-cases.md), [load test instructions](docs/load-test.md), and [defect reproduction instructions](docs/defect-log.md) for their data effects. The GitHub Actions workflow is manual and reads the target from `WC_BASE_URL` and password from a repository secret.
+The regression command intentionally checks the known CSV-04/05 validation defect, so it will report those assertions as failures until WC-019 is fixed. The full `npm test` command also includes opt-in mutation and concurrency checks. See [API test specification](docs/test-cases.md), [load test instructions](docs/load-test.md), and [defect reproduction instructions](docs/defect-log.md) for their data effects. The GitHub Actions workflow is manual and reads the target from `WC_BASE_URL` and password from a repository secret.
 
 [Integration and non-functional execution results](test-summary/integration-nonfunctional-run.md)

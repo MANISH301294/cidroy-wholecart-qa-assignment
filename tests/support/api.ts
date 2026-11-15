@@ -39,7 +39,7 @@ export const credentials = {
 } satisfies Record<string, Credentials>;
 
 export function appURL(path: string): string {
-  const base = (process.env.WC_BASE_URL ?? 'http://localhost:3000/').replace(/\/?$/, '/');
+  const base = (process.env.WC_BASE_URL ?? 'http://13.200.185.1/c/manish-dba39f/').replace(/\/?$/, '/');
   return new URL(path.replace(/^\//, ''), base).toString();
 }
 

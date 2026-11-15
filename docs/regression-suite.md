@@ -6,7 +6,7 @@ Run the stable regression set from the project root:
 npm run test:regression
 ```
 
-This one command runs the API read-only and negative-validation checks plus login and CSV UI checks for AUTH-01/02 and CSV-01 through CSV-07, plus CAT-06. It does not mutate catalogue stock, order lifecycle, operator settings, or refunds. The suite uses the assigned WholeCart copy by default; override `WC_BASE_URL` only for an approved copy.
+This one command runs the API read-only and negative-validation checks plus UI login and CSV checks for AUTH-01/02 and CSV-01 through CSV-07, plus CAT-06. Set `WC_TEST_PASSWORD` from the approved demo credentials in the shell; do not commit credentials. The Playwright UI and API helpers both default to the assigned WholeCart copy; override `WC_BASE_URL` only for another approved QA copy. The CSV tests update dedicated `SKU-QA-*` fixtures, including the persistent seller regression SKU, but do not alter ordinary catalogue products, order lifecycle, operator settings, or refunds. CSV-04/05 are expected to fail while WC-019 remains open; the regression command will return a failing status until that defect is fixed.
 
 ## Included checks
 
@@ -17,7 +17,7 @@ This one command runs the API read-only and negative-validation checks plus logi
 | `tests/ui/login.spec.ts` | Invalid and blank login attempts remain on login; buyer, seller and operator can sign in (AUTH-01/02). |
 | `tests/ui/csv-import.spec.ts` | CSV-04 mixed valid/invalid row handling and CSV-05 invalid tax, stock, case size and price reporting. Uses the repeatable seller2 SKU `SKU-QA-20261115`; invalid fixtures use dedicated `SKU-QA-*` identifiers. |
 
-The API and login checks are read-only apart from authentication attempts. CSV regression tests use persistent dedicated seller SKUs; seller1 and seller2 fixture products may be updated on each run. Invalid test rows should never create products. Keep this SKU restricted to the designated QA copy. Optional cases that require fixture variables are skipped when those fixtures are absent; skipped is not a pass.
+The API and login checks are read-only apart from authentication attempts. CSV regression tests use dedicated seller SKUs; seller1 and seller2 fixture products may be updated on each run and are not deleted by the UI. Invalid test rows should never create products. Keep these SKUs restricted to the designated QA copy. Optional cases that require fixture variables are skipped when those fixtures are absent; skipped is not a pass.
 
 ## Separate controlled regression candidates
 

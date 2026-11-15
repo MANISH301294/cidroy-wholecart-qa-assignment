@@ -9,7 +9,7 @@ export default defineConfig({
   reporter: [['list'], ['html', { open: 'never' }]],
   outputDir: 'test-results',
   use: {
-    baseURL: process.env.WC_BASE_URL ?? 'http://localhost:3000/',
+    baseURL: process.env.WC_BASE_URL ?? 'http://13.200.185.1/c/manish-dba39f/',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
   },
